@@ -24,49 +24,49 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Dashboard
 Route::prefix('dashboard')->middleware(['auth','auth.admin'])->group(function () {
     // Trang chủ dashboard
-    Route::get('/',[\App\Http\Controllers\backend\DashboardController::class,'index'])->name('backend.dashboard');
+    Route::get('/',[\App\Http\Controllers\Backend\DashboardController::class,'index'])->name('backend.dashboard');
     // Quản lý sản phẩm
     Route::prefix('products')->group(function(){
-        Route::get('/', [\App\Http\Controllers\backend\ProductController::class,'index'])->name('backend.product.index');
+        Route::get('/', [\App\Http\Controllers\Backend\ProductController::class,'index'])->name('backend.product.index');
         //Thêm mới
-        Route::get('/create', [\App\Http\Controllers\backend\ProductController::class,'create'])->name('backend.product.create');
-        Route::post('/', [\App\Http\Controllers\backend\ProductController::class,'store'])->name('backend.product.store');
+        Route::get('/create', [\App\Http\Controllers\Backend\ProductController::class,'create'])->name('backend.product.create');
+        Route::post('/', [\App\Http\Controllers\Backend\ProductController::class,'store'])->name('backend.product.store');
         //Chỉnh sửa
-        Route::get('/{product}/edit', [\App\Http\Controllers\backend\ProductController::class,'edit'])
+        Route::get('/{product}/edit', [\App\Http\Controllers\Backend\ProductController::class,'edit'])
         ->name('backend.product.edit')
         ->middleware('can:update,product');
-        Route::put('/{id}', [\App\Http\Controllers\backend\ProductController::class,'update'])->name('backend.product.update');
+        Route::put('/{id}', [\App\Http\Controllers\Backend\ProductController::class,'update'])->name('backend.product.update');
         // Route::delete('delete/{id}', [\App\Http\Controllers\backend\ProductController::class,'destroy'])->name('backend.product.delete');
 
     });
     // Quản lý người dùng
     Route::prefix('users')->group(function(){
-        Route::get('/', [\App\Http\Controllers\backend\UserController::class,'index'])->name('backend.user.index');
+        Route::get('/', [\App\Http\Controllers\Backend\UserController::class,'index'])->name('backend.user.index');
         //Thêm mới
-        Route::get('/create', [\App\Http\Controllers\backend\UserController::class,'create'])->name('backend.user.create');
-        Route::post('/', [\App\Http\Controllers\backend\UserController::class,'store'])->name('backend.user.store');
+        Route::get('/create', [\App\Http\Controllers\Backend\UserController::class,'create'])->name('backend.user.create');
+        Route::post('/', [\App\Http\Controllers\Backend\UserController::class,'store'])->name('backend.user.store');
         //Chỉnh sửa
-        Route::get('/{id}/edit', [\App\Http\Controllers\backend\UserController::class,'edit'])->name('backend.user.edit');
-        Route::put('/{id}', [\App\Http\Controllers\backend\UserController::class,'update'])->name('backend.user.update');
+        Route::get('/{id}/edit', [\App\Http\Controllers\Backend\UserController::class,'edit'])->name('backend.user.edit');
+        Route::put('/{id}', [\App\Http\Controllers\Backend\UserController::class,'update'])->name('backend.user.update');
         //Xóa
-        Route::get('/{id}', [\App\Http\Controllers\backend\UserController::class,'destroy'])->name('backend.user.delete');
+        Route::get('/{id}', [\App\Http\Controllers\Backend\UserController::class,'destroy'])->name('backend.user.delete');
     });
     // Quản lý danh mục
     Route::prefix('categories')->group(function(){
-        Route::get('/', [\App\Http\Controllers\backend\CategoryController::class,'index'])->name('backend.categories.index');
+        Route::get('/', [\App\Http\Controllers\Backend\CategoryController::class,'index'])->name('backend.categories.index');
         //Thêm mới
-        Route::get('/create', [\App\Http\Controllers\backend\CategoryController::class,'create'])->name('backend.categories.create');
-        Route::post('/', [\App\Http\Controllers\backend\CategoryController::class,'store'])->name('backend.categories.store');
+        Route::get('/create', [\App\Http\Controllers\Backend\CategoryController::class,'create'])->name('backend.categories.create');
+        Route::post('/', [\App\Http\Controllers\Backend\CategoryController::class,'store'])->name('backend.categories.store');
         //Chỉnh sửa
-        Route::get('/{id}/edit', [\App\Http\Controllers\backend\CategoryController::class,'edit'])->name('backend.categories.edit');
-        Route::put('/{id}', [\App\Http\Controllers\backend\CategoryController::class,'update'])->name('backend.categories.update');
+        Route::get('/{id}/edit', [\App\Http\Controllers\Backend\CategoryController::class,'edit'])->name('backend.categories.edit');
+        Route::put('/{id}', [\App\Http\Controllers\Backend\CategoryController::class,'update'])->name('backend.categories.update');
         //Xóa
-        Route::get('/{id}', [\App\Http\Controllers\backend\CategoryController::class,'destroy'])->name('backend.categories.delete');
+        Route::get('/{id}', [\App\Http\Controllers\Backend\CategoryController::class,'destroy'])->name('backend.categories.delete');
 
     });
     // Quản lý đặt hàng
     Route::prefix('orders')->group(function(){
-        Route::get('/', [\App\Http\Controllers\backend\OrderController::class,'index'])->name('backend.order.index');
+        Route::get('/', [\App\Http\Controllers\Backend\OrderController::class,'index'])->name('backend.order.index');
     });
 });
 
