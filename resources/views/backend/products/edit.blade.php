@@ -16,7 +16,7 @@
                 <strong>Cập nhật</strong> điện thoại
             </div>
             <div class="card-body card-block">
-                <form action="{{ route('backend.product.store', $product->id) }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                <form action="{{ route('backend.product.update', $product->id) }}" method="post" enctype="multipart/form-data" class="form-horizontal">
                     {{ csrf_field() }}
                     {{ method_field('PUT') }}
 
@@ -96,7 +96,7 @@
                             <label for="textarea-input" class=" form-control-label">Mô tả điện thoại</label>
                         </div>
                         <div class="col-12 col-md-9">
-                            <div id="summernote" name="content">{{ $product->content }}</div>
+                            <textarea id="summernote" name="content">{{ $product->content }}</textarea>
                             @error('content')
                                 <small class="form-text text-danger">{{ $message }}</small>
                             @enderror

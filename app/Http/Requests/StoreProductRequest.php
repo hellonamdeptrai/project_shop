@@ -38,7 +38,7 @@ class StoreProductRequest extends FormRequest
             'origin_price' => 'required|numeric',
             'sale_price' => 'required|numeric',
             'content' => 'required',
-            'status' => 'in:0,1,-1',
+            'status' => 'in:1,2,3',
         ];
     }
 

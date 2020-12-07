@@ -16,15 +16,15 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         DB::table('products')->truncate();
-        for ($i = 1; $i <= 20;$i++){
+        for ($i = 1; $i <= 30;$i++){
             DB::table('products')->insert([
-                'name' => 'Iphone'.$i,
-                'slug' => 'Iphone-'.$i,
-                'origin_price' => 5000*$i,
+                'name' => $name = 'Iphone '.$i,
+                'slug' => \Illuminate\Support\Str::slug($name),
+                'origin_price' => $origin = 5000*$i,
                 'brand' => 'Iphone',
-                'sale_price' => 4500*$i,
-                'discount_percent' => ((5000*$i) - (4500*$i)) / 100,
-                'content' => 'jsbgjdishbfghjrbdfhjrdf dfghdkgbkdrjgdkrjhkdrge dkrgdrgedrkgjdr dgdrjnbkdrhdbnjgdghdf  drfdrgfbhdvgdjnhbdgbdhjgbjdg drgvehd',
+                'sale_price' => $sale = 4500*$i,
+                'discount_percent' => (($origin - $sale)/$sale)*100  ,
+                'content' => 'hihi hihi hihi',
                 'user_id' => $i,
                 'category_id' => $i,
                 'status' => 1,

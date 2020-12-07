@@ -1,7 +1,62 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
+    @csrf
+    <span class="login100-form-title">
+        Login
+    </span>
+
+    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+        <input placeholder="Email" type="email" class="input100 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+        <span class="focus-input100"></span>
+        <span class="symbol-input100">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+        </span>
+    </div>
+    @error('email')
+        <span class="invalid-feedback" style="position: absolute" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+    @enderror
+
+    <div class="wrap-input100 validate-input" data-validate = "Password is required">
+        <input placeholder="Mật khẩu" type="password" class="input100 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+        <span class="focus-input100"></span>
+        <span class="symbol-input100">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+        </span>
+    </div>
+    @error('password')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+    @enderror
+
+    <div class="container-login100-form-btn">
+        <button class="login100-form-btn">
+            Đăng nhập
+        </button>
+    </div>
+
+    <div class="text-center p-t-12">
+        <span class="txt1">
+            Quên
+        </span>
+        <a class="txt2" href="{{ route('password.request') }}">
+            mật khẩu
+        </a>
+    </div>
+
+    <div class="text-center p-t-136">
+        <a class="txt2" href="{{ route('register') }}">
+            Tạo tài khoản mới
+            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+        </a>
+    </div>
+</form>
+
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -69,5 +124,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection

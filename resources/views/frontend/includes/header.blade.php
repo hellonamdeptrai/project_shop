@@ -3,36 +3,41 @@
         <div class="row">
             <div class="col-sm-2">
                 <div class="logo">
-                    <a href="index.html"><img src="/frontend/img/logo-nam.png" alt="Sellshop" /></a>
+                    <a href="{{route('frontend.index')}}"><img src="/frontend/img/logo-nam.png" alt="Sellshop" /></a>
                 </div>
             </div>
             <div class="col-sm-8">
                 <div class="header-middel">
                     <div class="middel-top clearfix">
                         <div class="left floatleft">
-                            <p><i class="mdi mdi-clock"></i> Mon-Fri : 09:00-19:00</p>
+                            <p><i class="mdi mdi-phone"></i> Liên hệ : 0123456789</p>
                         </div>
                         <div class="center floatleft">
                             <form action="#" method="get">
                                 <button type="submit"><i class="mdi mdi-magnify"></i></button>
-                                <input type="text" placeholder="Search within these results..." />
+                                <input type="text" placeholder="Tìm kiếm điện thoại..." />
                             </form>
                         </div>
                         <div class="right floatleft">
                             <ul class="clearfix">
                                 <li><a href="#"><i class="mdi mdi-account"></i></a>
                                     <ul>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="login.html">Registar</a></li>
-                                        <li><a href="my-account.html">My account</a></li>
+                                        <li><a href="{{ route('login') }}">Đăng nhập</a></li>
+                                        <li><a href="{{ route('register') }}">Đăng ký</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#"><i class="mdi mdi-settings"></i></a>
                                     <ul>
-                                        <li><a href="my-account.html">My account</a></li>
-                                        <li><a href="cart.html">My cart</a></li>
-                                        <li><a href="wishlist.html">My wishlist</a></li>
-                                        <li><a href="checkout.html">Check out</a></li>
+                                        <li><a href="my-account.html">Tài khoản</a></li>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Đăng xuất
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                                     </ul>
                                 </li>
                             </ul>
@@ -41,62 +46,21 @@
                     <div class="mainmenu">
                         <nav>
                             <ul>
-                                <li><a href="index.html">Home</a>
+                                <li><a href="{{route('frontend.index')}}">Trang chủ</a>
+                                </li>
+                                <li><a href="shop.html">Điện thoại</a>
                                     <ul class="dropdown">
-                                        <li><a href="index.html">Home version one</a></li>
-                                        <li><a href="index-2.html">Home version two</a></li>
+                                        @foreach ($categories as $category)
+                                        <li><a href="blog-style-1.html">{{ $category->name }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
-                                <li><a href="shop.html">Shop</a>
-                                    <ul class="magamenu">
-                                        <li class="banner"><a href="shop.html"><img src="img/maga1.png" alt="" /></a></li>
-                                        <li><h5>men’s wear</h5>
-                                            <ul>
-                                                <li><a href="#">Shirts & Top</a></li>
-                                                <li><a href="#">Shoes</a></li>
-                                                <li><a href="#">Dresses</a></li>
-                                                <li><a href="#">Shemwear</a></li>
-                                                <li><a href="#">Jeans</a></li>
-                                                <li><a href="#">Sweaters</a></li>
-                                                <li><a href="#">Jacket</a></li>
-                                                <li><a href="#">Men Watch</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><h5>women’s wear</h5>
-                                            <ul>
-                                                <li><a href="#">Shirts & Tops</a></li>
-                                                <li><a href="#">Shoes</a></li>
-                                                <li><a href="#">Dresses</a></li>
-                                                <li><a href="#">Shemwear</a></li>
-                                                <li><a href="#">Jeans</a></li>
-                                                <li><a href="#">Sweaters</a></li>
-                                                <li><a href="#">Jacket</a></li>
-                                                <li><a href="#">Women Watch</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="banner"><a href="shop.html"><img src="img/maga2.png" alt="" /></a></li>
-                                    </ul>
+                                <li><a href="#">Sắp bán</a>
                                 </li>
-                                <li><a href="#">Pages</a>
-                                    <ul class="dropdown">
-                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="product-grid.html">Product Grid View</a></li>
-                                        <li><a href="product-list.html">Product List View</a></li>
-                                        <li><a href="single-product.html">Single Product</a></li>
-                                        <li><a href="error-404.html">404 page</a></li>
-                                    </ul>
+                                <li><a href="blog.html">Điện thoại cũ</a>
                                 </li>
-                                <li><a href="blog.html">Blog</a>
-                                    <ul class="dropdown">
-                                        <li><a href="blog-style-1.html">Blog Style One</a></li>
-                                        <li><a href="blog-style-2.html">Blog Style Two</a></li>
-                                        <li><a href="single-blog.html">Single Blog</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="about.html">Thông tin</a></li>
+                                <li><a href="contact.html">Liên hệ</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -105,60 +69,21 @@
                         <div class="mobile-menu">
                             <nav id="dropdown">
                                 <ul>
-                                    <li><a href="index.html">Home</a>
+                                    <li><a href="{{route('frontend.index')}}">Trang chủ</a>
+                                    </li>
+                                    <li><a href="shop.html">Điện thoại</a>
                                         <ul class="dropdown">
-                                            <li><a href="index.html">Home version one</a></li>
-                                            <li><a href="index-2.html">Home version two</a></li>
+                                            @foreach ($categories as $category)
+                                            <li><a href="blog-style-1.html">{{ $category->name }}</a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
-                                    <li><a href="shop.html">Shop</a>
-                                        <ul>
-                                            <li><h5>men’s wear</h5>
-                                                <ul>
-                                                    <li><a href="#">Shirts & Top</a></li>
-                                                    <li><a href="#">Shoes</a></li>
-                                                    <li><a href="#">Dresses</a></li>
-                                                    <li><a href="#">Shemwear</a></li>
-                                                    <li><a href="#">Jeans</a></li>
-                                                    <li><a href="#">Sweaters</a></li>
-                                                    <li><a href="#">Jacket</a></li>
-                                                    <li><a href="#">Men Watch</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><h5>women’s wear</h5>
-                                                <ul>
-                                                    <li><a href="#">Shirts & Tops</a></li>
-                                                    <li><a href="#">Shoes</a></li>
-                                                    <li><a href="#">Dresses</a></li>
-                                                    <li><a href="#">Shemwear</a></li>
-                                                    <li><a href="#">Jeans</a></li>
-                                                    <li><a href="#">Sweaters</a></li>
-                                                    <li><a href="#">Jacket</a></li>
-                                                    <li><a href="#">Women Watch</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                    <li><a href="#">Sắp bán</a>
                                     </li>
-                                    <li><a href="#">Pages</a>
-                                        <ul>
-                                            <li><a href="wishlist.html">Wishlist</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
-                                            <li><a href="product-grid.html">Product Grid View</a></li>
-                                            <li><a href="product-list.html">Product List View</a></li>
-                                            <li><a href="single-product.html">Single Product</a></li>
-                                            <li><a href="error-404.html">404 page</a></li>
-                                        </ul>
+                                    <li><a href="blog.html">Điện thoại cũ</a>
                                     </li>
-                                    <li><a href="blog.html">Blog</a>
-                                        <ul>
-                                            <li><a href="blog-style-1.html">Blog Style One</a></li>
-                                            <li><a href="blog-style-2.html">Blog Style Two</a></li>
-                                            <li><a href="single-blog.html">Single Blog</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="about.html">Thông tin</a></li>
+                                    <li><a href="contact.html">Liên hệ</a></li>
                                 </ul>
                             </nav>
                         </div>

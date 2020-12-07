@@ -94,7 +94,7 @@
                             <label for="textarea-input" class=" form-control-label">Mô tả điện thoại</label>
                         </div>
                         <div class="col-12 col-md-9">
-                            <div id="summernote" name="content"></div>
+                            <textarea id="summernote" name="content"></textarea>
                             @error('content')
                                 <small class="form-text text-danger">{{ $message }}</small>
                             @enderror

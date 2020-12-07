@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Image;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,7 +17,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('frontend.home');
+        // $images = Image::take(2)->get();
+        $categories = Category::get();
+        $products = Product::take(4)->get();
+        return view('frontend.home')->with([
+            // 'images' => $images,
+            'categories' => $categories,
+            'products' => $products,
+        ]);
     }
 
     /**

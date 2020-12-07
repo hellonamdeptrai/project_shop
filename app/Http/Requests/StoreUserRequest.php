@@ -27,8 +27,10 @@ class StoreUserRequest extends FormRequest
             'name' => 'required|min:2|max:100',
             'email' => 'required|email',
             'password' => 'required|min:8|max:100',
-            'avatar' => 'required||max:2048',
-            'permission' => 'required|in:1,2,3',
+            'postion' => 'required|in:2,3,1',
+            'phone' => 'required',
+            'address' => 'required|min:2|max:100',
+            'avatar' => 'required',
         ];
     }
 
@@ -50,8 +52,10 @@ class StoreUserRequest extends FormRequest
             'name' => 'Tên người dùng',
             'email' => 'Email người dùng',
             'password' => 'Mật khẩu',
-            'avatar' => 'Avatar',
-            'permission' => 'Quyền',
+            'postion' => 'Quyền',
+            'phone' => 'Số điện thoại',
+            'address' => 'Quê quán',
+            'avatar' => 'Avatar'
         ];
     }
 }

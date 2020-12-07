@@ -70,7 +70,7 @@
                         <a href="{{ route('backend.product.edit', $product->id) }}" class="item" data-toggle="tooltip" data-placement="top" title="Sửa">
                             <i class="zmdi zmdi-edit"></i>
                         </a>
-                        <a href="{{ route('backend.product.edit', $product->id) }}" class="item" data-toggle="tooltip" data-placement="top" title="Xóa">
+                        <a href="{{ route('backend.product.delete', $product->id) }}" class="item" data-toggle="tooltip" data-placement="top" title="Xóa">
                             <i class="zmdi zmdi-delete"></i>
                         </a>
                     </div>

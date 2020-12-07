@@ -18,7 +18,7 @@ class CategoriesTableSeeder extends Seeder
         DB::table('categories')->truncate();
         DB::table('categories')->insert([
             'name' => $name = 'Iphone',
-            'slug' => $name,
+            'slug' => \Illuminate\Support\Str::slug($name),
             'parent_id' => 1,
             'depth' => 'phone/'.$name,
             'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),
@@ -26,7 +26,7 @@ class CategoriesTableSeeder extends Seeder
         ]);
         DB::table('categories')->insert([
             'name' => $name = 'Samsung',
-            'slug' => $name,
+            'slug' => \Illuminate\Support\Str::slug($name),
             'parent_id' => 1,
             'depth' => 'phone/'.$name,
             'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),
@@ -34,7 +34,7 @@ class CategoriesTableSeeder extends Seeder
         ]);
         DB::table('categories')->insert([
             'name' => $name = 'Oppo',
-            'slug' => $name,
+            'slug' => \Illuminate\Support\Str::slug($name),
             'parent_id' => 1,
             'depth' => 'phone/'.$name,
             'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),
@@ -42,7 +42,7 @@ class CategoriesTableSeeder extends Seeder
         ]);
         DB::table('categories')->insert([
             'name' => $name = 'Xiaomi',
-            'slug' => $name,
+            'slug' => \Illuminate\Support\Str::slug($name),
             'parent_id' => 1,
             'depth' => 'phone/'.$name,
             'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),
@@ -50,7 +50,7 @@ class CategoriesTableSeeder extends Seeder
         ]);
         DB::table('categories')->insert([
             'name' => $name = 'Vivo',
-            'slug' => $name,
+            'slug' => \Illuminate\Support\Str::slug($name),
             'parent_id' => 1,
             'depth' => 'phone/'.$name,
             'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),
@@ -58,7 +58,7 @@ class CategoriesTableSeeder extends Seeder
         ]);
         DB::table('categories')->insert([
             'name' => $name = 'Realme',
-            'slug' => $name,
+            'slug' => \Illuminate\Support\Str::slug($name),
             'parent_id' => 1,
             'depth' => 'phone/'.$name,
             'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),

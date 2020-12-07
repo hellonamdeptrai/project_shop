@@ -9,6 +9,13 @@
 </div>
 @endsection
 @section('content')
+    <h3 class="title-5 m-b-35"></h3>
+    <div class="table-data__tool">
+        <div class="table-data__tool-right">
+        <a href="{{ route('backend.user.index') }}" class="au-btn au-btn-icon au-btn--green au-btn--small">
+            Quay lại</a>
+        </div>
+    </div>
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
@@ -53,16 +60,37 @@
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3">
+                            <label for="text-input" class=" form-control-label">Số điện thoại</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <input type="number" id="text-input" name="phone" placeholder="Nhập số điện thoại" class="form-control">
+                            @error('phone')
+                                <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label for="text-input" class=" form-control-label">Quê quán</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <input type="text" id="text-input" name="address" placeholder="Nhập quê" class="form-control">
+                            @error('address')
+                                <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3">
                             <label for="select" class=" form-control-label">Quyền</label>
                         </div>
                         <div class="col-12 col-md-9">
-                            <select name="permission" id="select" class="form-control">
+                            <select name="postion" id="select" class="form-control">
                                 <option>Chọn quyền</option>
-                                <option value="1">Admin</option>
-                                <option value="2">User</option>
-                                <option value="3">Option #3</option>
+                                <option value="3">Admin</option>
+                                <option value="2">Nhân viên</option>
                             </select>
-                            @error('permission')
+                            @error('postion')
                                 <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>

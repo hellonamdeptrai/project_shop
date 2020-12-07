@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -45,8 +47,18 @@ class UserController extends Controller
 
         $user->name = $request->get('name');
         $user->email = $request->get('email');
-        $user->password = $request->get('password');
-        $user->permission = $request->get('permission');
+        $user->status = 1;
+        $user->postion = $request->get('postion');
+        $user->phone = $request->get('phone');
+        $user->address = $request->get('address');
+        $user->password = bcrypt($request->get('password'));
+
+        $file = $request->file('avatar');
+        if($file){
+            $path = Storage::disk('public')->putFileAs('avatars', $file,$file->getClientOriginalName());
+            $user->avatar = $file->getClientOriginalName();
+        }
+
         $user->save();
 
         return redirect()->route('backend.user.index');
@@ -60,7 +72,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -71,7 +83,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::get()->find($id);
+        return view('backend.users.edit')->with([
+            'user' => $user
+        ]);
     }
 
     /**
@@ -81,9 +96,28 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateUserRequest $request, $id)
     {
-        //
+        $user = User::get()->find($id);
+
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $user->status = $request->get('status');
+        $user->postion = $request->get('postion');
+        $user->phone = $request->get('phone');
+        $user->address = $request->get('address');
+        $user->password = bcrypt($request->get('password'));
+
+        $file = $request->file('avatar');
+        if($file){
+            $path = Storage::disk('public')->putFileAs('avatars', $file,$file->getClientOriginalName());
+            $user->avatar = $file->getClientOriginalName();
+        }
+        $user->avatar = $user->avatar;
+
+        $user->save();
+
+        return redirect()->route('backend.user.index');
     }
 
     /**
@@ -94,6 +128,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::get()->find($id);
+        $user->delete();
+        Storage::disk('public')->delete('avatars/'.$user->avatar = $user->avatar);
+
+        return redirect()->route('backend.user.index');
     }
 }

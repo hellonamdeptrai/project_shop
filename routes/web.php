@@ -36,7 +36,8 @@ Route::prefix('dashboard')->middleware(['auth','auth.admin'])->group(function ()
         ->name('backend.product.edit')
         ->middleware('can:update,product');
         Route::put('/{id}', [\App\Http\Controllers\Backend\ProductController::class,'update'])->name('backend.product.update');
-        // Route::delete('delete/{id}', [\App\Http\Controllers\backend\ProductController::class,'destroy'])->name('backend.product.delete');
+        //Xóa
+        Route::get('/{id}', [\App\Http\Controllers\backend\ProductController::class,'destroy'])->name('backend.product.delete');
 
     });
     // Quản lý người dùng
@@ -73,8 +74,18 @@ Route::prefix('dashboard')->middleware(['auth','auth.admin'])->group(function ()
 // Trang bán hàng
 Route::prefix('/')->group(function () {
     Route::get('/',[\App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('frontend.index');
-    Route::get('cart/add/{id}',[\App\Http\Controllers\Frontend\CartController::class, 'add'])->name('frontend.cart.add');
-    Route::get('cart',[\App\Http\Controllers\Frontend\CartController::class, 'index'])->name('frontend.cart.index');
-    Route::get('cart/remove/{id}',[\App\Http\Controllers\Frontend\CartController::class, 'remove'])->name('frontend.cart.remove');
+    //Giỏ hàng
+    Route::prefix('cart')->group(function () {
+        Route::get('/',[\App\Http\Controllers\Frontend\CartController::class, 'index'])->name('frontend.cart.index');
+        Route::get('/add/{id}',[\App\Http\Controllers\Frontend\CartController::class, 'add'])->name('frontend.cart.add');
+        Route::get('/remove/{id}',[\App\Http\Controllers\Frontend\CartController::class, 'remove'])->name('frontend.cart.remove');
 
+    });
+    //Sản phẩm
+    Route::prefix('product')->group(function () {
+        Route::get('/',[\App\Http\Controllers\Frontend\ProductController::class, 'index'])->name('frontend.product.index');
+        Route::get('/{product}',[\App\Http\Controllers\Frontend\ProductController::class, 'detail'])->name('frontend.product.detail');
+        Route::get('/remove/{id}',[\App\Http\Controllers\Frontend\ProductController::class, 'remove'])->name('frontend.product.remove');
+
+    });
 });

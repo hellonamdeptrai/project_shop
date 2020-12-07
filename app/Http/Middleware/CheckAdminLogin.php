@@ -17,7 +17,7 @@ class CheckAdminLogin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->postion != 2) {
+        if (Auth::user()->postion != 3 && Auth::user()->postion != 2) {
             return redirect()->route('frontend.index');
         }
         return $next($request);

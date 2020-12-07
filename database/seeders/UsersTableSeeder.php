@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,17 +15,18 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        // DB::table('users')->truncate();
-        // for ($i=0;$i<30;$i++){
+
             DB::table('users')->insert([
                 'name' => 'admin',
                 'phone' => '1234567890',
+                'avatar' => 'user.png',
                 'address' => 'Ha noi',
-                'postion' => 2,
+                'postion' => 3,
                 'status' => 1,
                 'email' => 'admin@gmail.com',
                 'password' => bcrypt('123456'),
+                'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),
+                'updated_at' => Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
-        // }
     }
 }
