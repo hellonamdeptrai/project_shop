@@ -19,11 +19,18 @@ class HomeController extends Controller
     {
         // $images = Image::take(2)->get();
         $categories = Category::get();
-        $products = Product::take(4)->get();
+        $products = Product::take(4)->orderBy('id','desc')->get();
+        $products2 = Product::skip(4)->take(4)->orderBy('id','desc')->get();
+        $productsrandom = Product::inRandomOrder()->limit(2)->get();
+        // dd($productsrandom);
+
+
         return view('frontend.home')->with([
             // 'images' => $images,
             'categories' => $categories,
             'products' => $products,
+            'products2' => $products2,
+            'productsrandom' => $productsrandom,
         ]);
     }
 

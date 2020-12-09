@@ -1,21 +1,4 @@
 <footer>
-    <!-- brand logo area start -->
-    <div class="brand-logo">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="barnd-bg">
-                        <a href="#"><img src="img/brand/1.png" alt="Brand Logo" /></a>
-                        <a href="#"><img src="img/brand/2.png" alt="Brand Logo" /></a>
-                        <a href="#"><img src="img/brand/3.png" alt="Brand Logo" /></a>
-                        <a href="#"><img src="img/brand/4.png" alt="Brand Logo" /></a>
-                        <a href="#"><img src="img/brand/5.png" alt="Brand Logo" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- brand logo section end -->
     <!-- social media section start -->
     <div class="social-media section-padding">
         <div class="container">
@@ -23,10 +6,7 @@
                 <div class="col-sm-6">
                     <div class="social-icons">
                         <a href="#"><i class="mdi mdi-facebook"></i></a>
-                        <a href="#"><i class="mdi mdi-twitter"></i></a>
-                        <a href="#"><i class="mdi mdi-google-plus"></i></a>
-                        <a href="#"><i class="mdi mdi-dribbble"></i></a>
-                        <a href="#"><i class="mdi mdi-rss"></i></a>
+                        <a href="#"><i class="mdi mdi-instagram"></i></a>
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -49,24 +29,24 @@
                     <div class="col-xs-12 col-sm-6 col-md-3">
                         <div class="single-text">
                             <div class="footer-title">
-                                <h4>Contact us</h4>
+                                <h4>Liên hệ với chúng tôi</h4>
                             </div>
                             <div class="footer-text">
                                 <ul>
                                     <li>
                                         <i class="mdi mdi-map-marker"></i>
-                                        <p>Flat no 01, House no 02, Vincent,</p>
-                                        <p>Dhaka-1207, Bangladesh</p>
+                                        <p>Ha Noi,</p>
+                                        <p>Viet Nam</p>
                                     </li>
                                     <li>
                                         <i class="mdi mdi-phone"></i>
-                                        <p>(+880) 19453 821758</p>
-                                        <p>(+880) 19453 813758</p>
+                                        <p>0987654321</p>
+                                        <p>0361234567</p>
                                     </li>
                                     <li>
                                         <i class="mdi mdi-email"></i>
-                                        <p>info@mydomain.com</p>
-                                        <p>username@email.com</p>
+                                        <p>admin@namshop.com</p>
+                                        <p>nam@namshop.com</p>
                                     </li>
                                 </ul>
                             </div>
@@ -75,16 +55,14 @@
                     <div class="col-xs-12 col-sm-3 col-md-2 wide-mobile">
                         <div class="single-text">
                             <div class="footer-title">
-                                <h4>my account</h4>
+                                <h4>Tài khoản của tôi</h4>
                             </div>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="login.html"><i class="mdi mdi-menu-right"></i>My Account</a></li>
-                                    <li><a href="wishlist.html"><i class="mdi mdi-menu-right"></i>My Wishlist</a></li>
-                                    <li><a href="cart.html"><i class="mdi mdi-menu-right"></i>My Cart</a></li>
-                                    <li><a href="login.html"><i class="mdi mdi-menu-right"></i>Sign In</a></li>
-                                    <li><a href="checkout.html"><i class="mdi mdi-menu-right"></i>Check out</a></li>
-                                    <li><a href="#"><i class="mdi mdi-menu-right"></i>Track My Orde</a></li>
+                                    <li><a href="login.html"><i class="mdi mdi-menu-right"></i>Tài khoản</a></li>
+                                    <li><a href="wishlist.html"><i class="mdi mdi-menu-right"></i>Đăng nhập</a></li>
+                                    <li><a href="cart.html"><i class="mdi mdi-menu-right"></i>Đăng ký</a></li>
+                                    <li><a href="login.html"><i class="mdi mdi-menu-right"></i>Giỏ hàng</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -92,16 +70,13 @@
                     <div class="col-xs-12 col-sm-3 col-md-2 wide-mobile">
                         <div class="single-text">
                             <div class="footer-title">
-                                <h4>shipping</h4>
+                                <h4>Danh mục</h4>
                             </div>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="contact.html"><i class="mdi mdi-menu-right"></i>New Products</a></li>
-                                    <li><a href="#"><i class="mdi mdi-menu-right"></i>Top Sellers</a></li>
-                                    <li><a href="#"><i class="mdi mdi-menu-right"></i>Manufactirers</a></li>
-                                    <li><a href="#"><i class="mdi mdi-menu-right"></i>Suppliers</a></li>
-                                    <li><a href="#"><i class="mdi mdi-menu-right"></i>Specials</a></li>
-                                    <li><a href="#"><i class="mdi mdi-menu-right"></i>Availability</a></li>
+                                    <li><a href="contact.html"><i class="mdi mdi-menu-right"></i>Điện thoại</a></li>
+                                    <li><a href="#"><i class="mdi mdi-menu-right"></i>Sắp bán</a></li>
+                                    <li><a href="#"><i class="mdi mdi-menu-right"></i>Điện thoại cũ</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -109,16 +84,12 @@
                     <div class="col-xs-12 col-sm-6 col-md-2 r-margin-top wide-mobile">
                         <div class="single-text">
                             <div class="footer-title">
-                                <h4>Information</h4>
+                                <h4>Thông tin</h4>
                             </div>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="contact.html"><i class="mdi mdi-menu-right"></i>Return Exchange</a></li>
-                                    <li><a href="#"><i class="mdi mdi-menu-right"></i>Fast Delivery</a></li>
-                                    <li><a href="#"><i class="mdi mdi-menu-right"></i>Online Shopping</a></li>
-                                    <li><a href="#"><i class="mdi mdi-menu-right"></i>Shipping Guide</a></li>
-                                    <li><a href="#"><i class="mdi mdi-menu-right"></i>Turm Of Use</a></li>
-                                    <li><a href="#"><i class="mdi mdi-menu-right"></i>Home Delivery</a></li>
+                                    <li><a href="contact.html"><i class="mdi mdi-menu-right"></i>Thông tin</a></li>
+                                    <li><a href="#"><i class="mdi mdi-menu-right"></i>Liên hệ</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -126,16 +97,16 @@
                     <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top wide-mobile">
                         <div class="single-text">
                             <div class="footer-title">
-                                <h4>instagram</h4>
+                                <h4>Các hãng</h4>
                             </div>
                             <div class="clearfix instagram">
                                 <ul>
-                                    <li><a href="#"><img src="img/footer/in1.png" alt="Instagram" /></a></li>
-                                    <li><a href="#"><img src="img/footer/in2.png" alt="Instagram" /></a></li>
-                                    <li><a href="#"><img src="img/footer/in3.png" alt="Instagram" /></a></li>
-                                    <li><a href="#"><img src="img/footer/in4.png" alt="Instagram" /></a></li>
-                                    <li><a href="#"><img src="img/footer/in5.png" alt="Instagram" /></a></li>
-                                    <li><a href="#"><img src="img/footer/in6.png" alt="Instagram" /></a></li>
+                                    <li><a href="#"><img src="/frontend/img/footer/in1.png" alt="Instagram" /></a></li>
+                                    <li><a href="#"><img src="/frontend/img/footer/in2.png" alt="Instagram" /></a></li>
+                                    <li><a href="#"><img src="/frontend/img/footer/in3.png" alt="Instagram" /></a></li>
+                                    <li><a href="#"><img src="/frontend/img/footer/in4.png" alt="Instagram" /></a></li>
+                                    <li><a href="#"><img src="/frontend/img/footer/in5.png" alt="Instagram" /></a></li>
+                                    <li><a href="#"><img src="/frontend/img/footer/in6.png" alt="Instagram" /></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -150,7 +121,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-6">
-                    <p>&copy; Sellshop 2016. All Rights Reserved.</p>
+                    <p>&copy; Nam shop 2020. Thuộc bản quyền Nam shop.</p>
                 </div>
                 <div class="col-xs-12 col-sm-6 text-right">
                     <a href="#"><img src="img/footer/payment.png" alt="" /></a>

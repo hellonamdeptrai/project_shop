@@ -88,7 +88,7 @@
                     </li>
                     <li>
                         <div class="row text-center">
-                            @foreach ($products as $product)
+                            @foreach ($products2 as $product)
                             <div class="col-xs-12 col-sm-6 col-md-3">
                                 <div class="single-product">
                                     <div class="product-img">
@@ -125,8 +125,8 @@
                 <div class="col-sm-4 col-md-2">
                     <div class="tab-menu nav nav-tabs padding">
                         <ul>
-                            <li class="active"><a href="#dress1" data-toggle="tab" data-target="#dress1, #text1"><img src="img/coming/s1.jpg" alt="" /></a></li>
-                            <li><a href="#dress2" data-toggle="tab" data-target="#dress2,#text2"><img src="img/coming/s2.jpg" alt="" /></a></li>
+                            <li class="active"><a href="#dress1" data-toggle="tab" data-target="#dress1, #text1"><img src="/frontend/img/coming/s1.jpg" alt="" /></a></li>
+                            <li><a href="#dress2" data-toggle="tab" data-target="#dress2,#text2"><img src="/frontend/img/coming/s2.jpg" alt="" /></a></li>
                         </ul>
                     </div>
                 </div>
@@ -143,8 +143,10 @@
                 <div class="col-sm-12 col-md-5">
                     <div class="padding">
                         <div class="tab-content" >
-                            <div class="single-coming tab-pane fade in active" id="text1">
-                                <h4><a href="#">The Maker usc Dress</a></h4>
+                            <?php $i= 1?>
+                            @foreach ($productsrandom as $product)
+                            <div class="single-coming tab-pane fade in active" id="text<?= $i++?>">
+                                <h4><a href="#">{{$product->name}}</a></h4>
                                 <span><strong>$569.00</strong>   <del>$669.00</del></span>
                                 <p class="come-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed does eiusmodes tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venim, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam.</p>
                                 <ul class="color-size">
@@ -174,37 +176,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="single-coming tab-pane fade" id="text2">
-                                <h4><a href="#">The Maker usc Dress</a></h4>
-                                <span><strong>$569.00</strong>   <del>$669.00</del></span>
-                                <p class="come-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed does eiusmodes tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venim, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam.</p>
-                                <ul class="color-size">
-                                    <li><span>Size</span><strong>:</strong> <a href="#">SL</a><a href="#">ML</a><a href="#">Xl</a></li>
-                                    <li><span>color</span><strong>:</strong> <a href="#">Red</a><a href="#">Grean</a><a href="#">Blue</a></li>
-                                    <li><span>Brand</span><strong>:</strong>Crazy Fashion</li>
-                                    <li><span>category</span><strong>:</strong>Fashion   Men’s</li>
-                                </ul>
-                                <div class="count-text clearfix">
-                                    <ul id="countdown-2">
-                                        <li>
-                                            <p class="timeRefDays timedescription">days</p>
-                                            <span class="days timenumbers">00</span>
-                                        </li>
-                                        <li>
-                                            <p class="timeRefHours timedescription">hrs</p>
-                                            <span class="hours timenumbers">00</span>
-                                        </li>
-                                        <li>
-                                            <p class="timeRefMinutes timedescription">mins</p>
-                                            <span class="minutes timenumbers">00</span>
-                                        </li>
-                                        <li>
-                                            <p class="timeRefSeconds timedescription">secs</p>
-                                            <span class="seconds timenumbers">00</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -947,7 +919,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="section-title text-center">
-                        <h2>Our Service</h2>
+                        <h2>Dịch Vụ Của Chúng Tôi</h2>
                     </div>
                 </div>
             </div>
@@ -955,138 +927,25 @@
                 <div class="col-sm-4">
                     <div class="service-text">
                         <i class="mdi mdi-truck"></i>
-                        <h4>home delivery</h4>
-                        <p>Contrary to popular belief, Lorem Ipsum is <br /> not simply random text.</p>
+                        <h4>GIAO HÀNG TẬN NHÀ</h4>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="service-text">
                         <i class="mdi mdi-lock"></i>
-                        <h4>PAYMENT SECURED</h4>
-                        <p>Contrary to popular belief, Lorem Ipsum is <br /> not simply random text.</p>
+                        <h4>THANH TOÁN ĐƯỢC BẢO MẬT</h4>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="service-text">
                         <i class="mdi mdi-rotate-left"></i>
-                        <h4>30 days money back</h4>
-                        <p>Contrary to popular belief, Lorem Ipsum is <br /> not simply random text.</p>
+                        <h4>HOÀN LẠI TIỀN TRONG 30 NGÀY</h4>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- service section end -->
-    <!-- blog section start -->
-    <section class="latest-blog section-padding extra-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="section-title text-center">
-                        <h2>Latest Blog</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="wrapper">
-                <ul class="load-list load-list-blog">
-                    <li>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="l-blog-text">
-                                    <div class="banner"><a href="single-blog.html"><img src="/frontend/img/blog/1.jpg" alt="" /></a></div>
-                                    <div class="s-blog-text">
-                                        <h4><a href="single-blog.html">Fashion style fine arts drawing</a></h4>
-                                        <span>By : <a href="#">Rakib</a> | <a href="#">210 Like</a> | <a href="#">69 Comments</a></span>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour....</p>
-                                    </div>
-                                    <div class="date-read clearfix">
-                                        <a href="#"><i class="mdi mdi-clock"></i> jun 25, 2016</a>
-                                        <a href="single-blog.html">read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="l-blog-text">
-                                    <div class="banner"><a href="single-blog.html"><img src="/frontend/img/blog/2.jpg" alt="" /></a></div>
-                                    <div class="s-blog-text">
-                                        <h4><a href="single-blog.html">women’s Fashion style 2016</a></h4>
-                                        <span>By : <a href="#">Rakib</a> | <a href="#">210 Like</a> | <a href="#">69 Comments</a></span>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour....</p>
-                                    </div>
-                                    <div class="date-read clearfix">
-                                        <a href="#"><i class="mdi mdi-clock"></i> jun 15, 2016</a>
-                                        <a href="single-blog.html">read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="l-blog-text">
-                                    <div class="banner"><a href="single-blog.html"><img src="/frontend/img/blog/3.jpg" alt="" /></a></div>
-                                    <div class="s-blog-text">
-                                        <h4><a href="single-blog.html">women’s winter Fashion style</a></h4>
-                                        <span>By : <a href="#">Rakib</a> | <a href="#">210 Like</a> | <a href="#">69 Comments</a></span>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour....</p>
-                                    </div>
-                                    <div class="date-read clearfix">
-                                        <a href="#"><i class="mdi mdi-clock"></i> jun 22, 2016</a>
-                                        <a href="single-blog.html">read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="l-blog-text">
-                                    <div class="banner"><a href="single-blog.html"><img src="/frontend/img/blog/3.jpg" alt="" /></a></div>
-                                    <div class="s-blog-text">
-                                        <h4><a href="single-blog.html">women’s winter Fashion style</a></h4>
-                                        <span>By : <a href="#">Rakib</a> | <a href="#">210 Like</a> | <a href="#">69 Comments</a></span>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour....</p>
-                                    </div>
-                                    <div class="date-read clearfix">
-                                        <a href="#"><i class="mdi mdi-clock"></i> jun 22, 2016</a>
-                                        <a href="single-blog.html">read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="l-blog-text">
-                                    <div class="banner"><a href="single-blog.html"><img src="/frontend/img/blog/1.jpg" alt="" /></a></div>
-                                    <div class="s-blog-text">
-                                        <h4><a href="single-blog.html">Fashion style fine arts drawing</a></h4>
-                                        <span>By : <a href="#">Rakib</a> | <a href="#">210 Like</a> | <a href="#">69 Comments</a></span>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour....</p>
-                                    </div>
-                                    <div class="date-read clearfix">
-                                        <a href="#"><i class="mdi mdi-clock"></i> jun 25, 2016</a>
-                                        <a href="single-blog.html">read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="l-blog-text">
-                                    <div class="banner"><a href="single-blog.html"><img src="/frontend/img/blog/2.jpg" alt="" /></a></div>
-                                    <div class="s-blog-text">
-                                        <h4><a href="single-blog.html">women’s Fashion style 2016</a></h4>
-                                        <span>By : <a href="#">Rakib</a> | <a href="#">210 Like</a> | <a href="#">69 Comments</a></span>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour....</p>
-                                    </div>
-                                    <div class="date-read clearfix">
-                                        <a href="#"><i class="mdi mdi-clock"></i> jun 15, 2016</a>
-                                        <a href="single-blog.html">read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <button id="load-more-blog">Load More</button>
-            </div>
-        </div>
-    </section>
-    <!-- blog section end -->
     <!-- quick view start -->
     <div class="product-details quick-view modal animated zoomInUp" id="quick-view">
         <div class="container">
