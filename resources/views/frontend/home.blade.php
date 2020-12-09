@@ -71,7 +71,7 @@
                                         <a href="{{route('frontend.product.detail',$product->id)}}"><img src="/frontend/img/products/1.jpg" alt="Product Title" /></a>
                                         <div class="actions-btn">
                                             <a href="{{ route('frontend.cart.add',$product->id) }}"><i class="mdi mdi-cart"></i></a>
-                                            <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                            <a href="#" data-toggle="modal" data-target="#quick-view{{$product->id}}"><i class="mdi mdi-eye"></i></a>
                                             <a href="#"><i class="mdi mdi-heart"></i></a>
                                         </div>
                                     </div>
@@ -98,7 +98,7 @@
                                         <a href="#"><img src="/frontend/img/products/1.jpg" alt="Product Title" /></a>
                                         <div class="actions-btn">
                                             <a href="{{ route('frontend.cart.add',$product->id) }}"><i class="mdi mdi-cart"></i></a>
-                                            <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                            <a href="#" data-toggle="modal" data-target="#quick-view{{$product->id}}"><i class="mdi mdi-eye"></i></a>
                                             <a href="#"><i class="mdi mdi-heart"></i></a>
                                         </div>
                                     </div>
@@ -192,9 +192,8 @@
                     <div class="section-title text-center">
                         <div class="product-tab nav nav-tabs">
                             <ul>
-                                <li class="active"><a data-toggle="tab" href="#arrival">New Arrival <span>/</span></a></li>
-                                <li><a data-toggle="tab" href="#popular">Popular Product <span>/</span></a></li>
-                                <li><a data-toggle="tab" href="#best">Best Seller</a></li>
+                                <li class="active"><a data-toggle="tab" href="#arrival">Sắp bán <span>/</span></a></li>
+                                <li><a data-toggle="tab" href="#best">Điện thoại cũ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -206,6 +205,7 @@
                         <ul class="load-list load-list-two">
                             <li>
                                 <div class="row text-center">
+                                    @foreach ($comingsoon as $comingsoon)
                                     <div class="col-xs-12 col-sm-6 col-md-3">
                                         <div class="single-product">
                                             <div class="product-img">
@@ -215,153 +215,23 @@
                                                 <a href="#"><img src="/frontend/img/products/5.jpg" alt="Product Title" /></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view{{$comingsoon->id}}"><i class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
                                             <div class="product-dsc">
-                                                <p><a href="#">men’s White t-shirt</a></p>
+                                                <p><a href="#">{{$comingsoon->name}}</a></p>
                                                 <span>$165.20</span>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <div class="pro-type sell">
-                                                    <span>sell</span>
-                                                </div>
-                                                <a href="#"><img src="/frontend/img/products/6.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Black t-shirt</a></p>
-                                                <span>$57.00 <del>$60.00</del></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <div class="pro-type">
-                                                    <span>-15%</span>
-                                                </div>
-                                                <a href="#"><img src="/frontend/img/products/7.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Grey t-shirt</a></p>
-                                                <span>$67.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="img/products/4.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Blue t-shirt</a></p>
-                                                <span>$77.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
+                                    @endforeach
                                 </div>
                             </li>
                             <li>
                                 <div class="row text-center">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="/frontend/img/products/8.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Black t-shirt</a></p>
-                                                <span>$65.20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <div class="pro-type sell">
-                                                    <span>sell</span>
-                                                </div>
-                                                <a href="#"><img src="/frontend/img/products/9.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Black t-shirt</a></p>
-                                                <span>$57.00 <del>$62.00</del></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="/frontend/img/products/10.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Black t-shirt</a></p>
-                                                <span>$56.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="/frontend/img/products/11.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Black t-shirt</a></p>
-                                                <span>$96.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row text-center">
+                                    @foreach ($comingsoon2 as $comingsoon)
                                     <div class="col-xs-12 col-sm-6 col-md-3">
                                         <div class="single-product">
                                             <div class="product-img">
@@ -371,310 +241,57 @@
                                                 <a href="#"><img src="/frontend/img/products/5.jpg" alt="Product Title" /></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view{{$comingsoon->id}}"><i class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
                                             <div class="product-dsc">
-                                                <p><a href="#">men’s White t-shirt</a></p>
+                                                <p><a href="#">{{$comingsoon->name}}</a></p>
                                                 <span>$165.20</span>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- single product end -->
+                                    @endforeach
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row text-center">
+                                    @foreach ($comingsoon3 as $comingsoon)
                                     <div class="col-xs-12 col-sm-6 col-md-3">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="/frontend/img/products/6.jpg" alt="Product Title" /></a>
+                                                <div class="pro-type">
+                                                    <span>new</span>
+                                                </div>
+                                                <a href="#"><img src="/frontend/img/products/5.jpg" alt="Product Title" /></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view{{$comingsoon->id}}"><i class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
                                             <div class="product-dsc">
-                                                <p><a href="#">men’s Black t-shirt</a></p>
-                                                <span>$57.00</span>
+                                                <p><a href="#">{{$comingsoon->name}}</a></p>
+                                                <span>$165.20</span>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="/frontend/img/products/7.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Grey t-shirt</a></p>
-                                                <span>$67.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="/frontend/img/products/8.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Blue t-shirt</a></p>
-                                                <span>$77.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
+                                    @endforeach
                                 </div>
                             </li>
                         </ul>
-                        <button id="load-more-two">Load More</button>
+                        <button id="load-more-two">Tải thêm</button>
                     </div>
                 </div>
                 <!-- arrival product end -->
-                <div class="tab-pane fade" id="popular">
-                    <div class="wrapper">
-                        <ul class="load-list load-list-three">
-                            <li>
-                                <div class="row text-center">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="/frontend/img/products/6.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Black t-shirt</a></p>
-                                                <span>$57.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="/frontend/img/products/7.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Grey t-shirt</a></p>
-                                                <span>$67.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="/frontend/img/products/8.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Blue t-shirt</a></p>
-                                                <span>$77.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="/frontend/img/products/4.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Blue t-shirt</a></p>
-                                                <span>$77.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row text-center">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="/frontend/img/products/8.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Black t-shirt</a></p>
-                                                <span>$65.20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <div class="pro-type sell">
-                                                    <span>sell</span>
-                                                </div>
-                                                <a href="#"><img src="/frontend/img/products/9.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Black t-shirt</a></p>
-                                                <span>$57.00 <del>$62.00</del></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="/frontend/img/products/10.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Black t-shirt</a></p>
-                                                <span>$56.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="/frontend/img/products/11.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Black t-shirt</a></p>
-                                                <span>$96.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row text-center">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <div class="pro-type">
-                                                    <span>new</span>
-                                                </div>
-                                                <a href="#"><img src="/frontend/img/products/5.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s White t-shirt</a></p>
-                                                <span>$165.20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="/frontend/img/products/6.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Black t-shirt</a></p>
-                                                <span>$57.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="/frontend/img/products/7.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Grey t-shirt</a></p>
-                                                <span>$67.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="/frontend/img/products/8.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Blue t-shirt</a></p>
-                                                <span>$77.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                </div>
-                            </li>
-                        </ul>
-                        <button id="load-more-three">Load More</button>
-                    </div>
-                </div>
-                <!-- popular product end -->
                 <div class="tab-pane fade" id="best">
                     <div class="wrapper">
                         <ul class="load-list load-list-four">
                             <li>
                                 <div class="row text-center">
+                                    @foreach ($old as $old)
                                     <div class="col-xs-12 col-sm-6 col-md-3">
                                         <div class="single-product">
                                             <div class="product-img">
@@ -684,228 +301,74 @@
                                                 <a href="#"><img src="/frontend/img/products/5.jpg" alt="Product Title" /></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view{{$old->id}}"><i class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
                                             <div class="product-dsc">
-                                                <p><a href="#">men’s White t-shirt</a></p>
+                                                <p><a href="#">{{$old->name}}</a></p>
                                                 <span>$165.20</span>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="/frontend/img/products/6.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Black t-shirt</a></p>
-                                                <span>$57.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <div class="pro-type">
-                                                    <span>-15%</span>
-                                                </div>
-                                                <a href="#"><img src="/frontend/img/products/7.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Grey t-shirt</a></p>
-                                                <span>$67.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="/frontend/img/products/4.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Blue t-shirt</a></p>
-                                                <span>$77.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
+                                    @endforeach
                                 </div>
                             </li>
                             <li>
                                 <div class="row text-center">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="img/products/8.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Black t-shirt</a></p>
-                                                <span>$65.20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <div class="pro-type sell">
-                                                    <span>sell</span>
-                                                </div>
-                                                <a href="#"><img src="img/products/9.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Black t-shirt</a></p>
-                                                <span>$57.00 <del>$62.00</del></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="img/products/10.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Black t-shirt</a></p>
-                                                <span>$56.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="img/products/11.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Black t-shirt</a></p>
-                                                <span>$96.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row text-center">
+                                    @foreach ($old2 as $old)
                                     <div class="col-xs-12 col-sm-6 col-md-3">
                                         <div class="single-product">
                                             <div class="product-img">
                                                 <div class="pro-type">
                                                     <span>new</span>
                                                 </div>
-                                                <a href="#"><img src="img/products/5.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="/frontend/img/products/5.jpg" alt="Product Title" /></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view{{$old->id}}"><i class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
                                             <div class="product-dsc">
-                                                <p><a href="#">men’s White t-shirt</a></p>
+                                                <p><a href="#">{{$old->name}}</a></p>
                                                 <span>$165.20</span>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- single product end -->
+                                    @endforeach
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row text-center">
+                                    @foreach ($old3 as $old)
                                     <div class="col-xs-12 col-sm-6 col-md-3">
                                         <div class="single-product">
                                             <div class="product-img">
                                                 <div class="pro-type">
                                                     <span>new</span>
                                                 </div>
-                                                <a href="#"><img src="img/products/5.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="/frontend/img/products/5.jpg" alt="Product Title" /></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view{{$old->id}}"><i class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
                                             <div class="product-dsc">
-                                                <p><a href="#">men’s White t-shirt</a></p>
+                                                <p><a href="#">{{$old->name}}</a></p>
                                                 <span>$165.20</span>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="img/products/6.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Black t-shirt</a></p>
-                                                <span>$57.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
-                                    <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                                        <div class="single-product">
-                                            <div class="product-img">
-                                                <a href="#"><img src="img/products/8.jpg" alt="Product Title" /></a>
-                                                <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                                    <a href="#"><i class="mdi mdi-heart"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-dsc">
-                                                <p><a href="#">men’s Blue t-shirt</a></p>
-                                                <span>$77.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single product end -->
+                                    @endforeach
                                 </div>
                             </li>
                         </ul>
-                        <button id="load-more-four">Load More</button>
+                        <button id="load-more-four">Tải thêm</button>
                     </div>
                 </div>
                 <!-- popular product end -->
@@ -946,8 +409,9 @@
         </div>
     </section>
     <!-- service section end -->
-    <!-- quick view start -->
-    <div class="product-details quick-view modal animated zoomInUp" id="quick-view">
+    @foreach ($details as $detail)
+    <!-- quick view start -->        
+    <div class="product-details quick-view modal animated zoomInUp" id="quick-view{{$detail->id}}">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -968,25 +432,25 @@
                                                                 <div class="pro-type">
                                                                     <span>new</span>
                                                                 </div>
-                                                                <a class="simpleLens-image" data-lens-image="/frontend/img/products/z1.jpg" href="#"><img src="img/products/z1.jpg" alt="" class="simpleLens-big-image"></a>
+                                                                <a class="simpleLens-image" data-lens-image="/frontend/img/products/z1.jpg" href="#"><img src="/frontend/img/products/z1.jpg" alt="" class="simpleLens-big-image"></a>
                                                             </div>
                                                             <div class="simpleLens-container tab-pane active fade in" id="sin-2">
                                                                 <div class="pro-type sell">
                                                                     <span>sell</span>
                                                                 </div>
-                                                                <a class="simpleLens-image" data-lens-image="/frontend/img/products/z2.jpg" href="#"><img src="img/products/z2.jpg" alt="" class="simpleLens-big-image"></a>
+                                                                <a class="simpleLens-image" data-lens-image="/frontend/img/products/z2.jpg" href="#"><img src="/frontend/img/products/z2.jpg" alt="" class="simpleLens-big-image"></a>
                                                             </div>
                                                             <div class="simpleLens-container tab-pane fade in" id="sin-3">
                                                                 <div class="pro-type">
                                                                     <span>-15%</span>
                                                                 </div>
-                                                                <a class="simpleLens-image" data-lens-image="/frontend/img/products/z3.jpg" href="#"><img src="img/products/z3.jpg" alt="" class="simpleLens-big-image"></a>
+                                                                <a class="simpleLens-image" data-lens-image="/frontend/img/products/z3.jpg" href="#"><img src="/frontend/img/products/z3.jpg" alt="" class="simpleLens-big-image"></a>
                                                             </div>
                                                             <div class="simpleLens-container tab-pane fade in" id="sin-4">
                                                                 <div class="pro-type">
                                                                     <span>new</span>
                                                                 </div>
-                                                                <a class="simpleLens-image" data-lens-image="/frontend/img/products/z4.jpg" href="#"><img src="img/products/z4.jpg" alt="" class="simpleLens-big-image"></a>
+                                                                <a class="simpleLens-image" data-lens-image="/frontend/img/products/z4.jpg" href="#"><img src="/frontend/img/products/z4.jpg" alt="" class="simpleLens-big-image"></a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1004,8 +468,7 @@
                                         <div class="col-xs-12 col-sm-7 col-md-8">
                                             <div class="quick-right">
                                                 <div class="list-text">
-                                                    <h3>men’s White t-shirt</h3>
-                                                    <span>Summer men’s fashion</span>
+                                                    <h3>{{$detail->name}}</h3>
                                                     <div class="ratting floatright">
                                                         <p>( 27 Rating )</p>
                                                         <i class="mdi mdi-star"></i>
@@ -1014,7 +477,7 @@
                                                         <i class="mdi mdi-star-half"></i>
                                                         <i class="mdi mdi-star-outline"></i>
                                                     </div>
-                                                    <h5><del>$79.30</del> $69.30</h5>
+                                                    <h5><del>{{number_format($detail->origin_price,0)}}đ</del> {{number_format($detail->sale_price,0)}}đ</h5>
                                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have be suffered alteration in some form, by injected humour, or randomised words which donot look even slightly believable. If you are going to use a passage of Lorem Ipsum, you neede be sure there isn't anything embarrassing hidden in the middle of text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                                                     <div class="all-choose">
                                                         <div class="s-shoose">
@@ -1083,4 +546,6 @@
         </div>
     </div>
     <!-- quick view end -->
+    @endforeach
+
 @endsection

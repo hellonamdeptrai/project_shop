@@ -12,8 +12,8 @@
                 <div class="col-sm-6">
                     <div class="newsletter">
                         <form action="mail.php" method="post">
-                            <input type="text" name="email" placeholder="Enter your email..."/>
-                            <input type="submit" value="subscribe"/>
+                            <input type="text" name="email" placeholder="Nhận thông tin mới từ chúng tôi..."/>
+                            <input type="submit" value="Gửi email"/>
                         </form>
                     </div>
                 </div>
@@ -60,9 +60,9 @@
                             <div class="footer-menu">
                                 <ul>
                                     <li><a href="login.html"><i class="mdi mdi-menu-right"></i>Tài khoản</a></li>
-                                    <li><a href="wishlist.html"><i class="mdi mdi-menu-right"></i>Đăng nhập</a></li>
-                                    <li><a href="cart.html"><i class="mdi mdi-menu-right"></i>Đăng ký</a></li>
-                                    <li><a href="login.html"><i class="mdi mdi-menu-right"></i>Giỏ hàng</a></li>
+                                    <li><a href="{{ route('login') }}"><i class="mdi mdi-menu-right"></i>Đăng nhập</a></li>
+                                    <li><a href="{{ route('register') }}"><i class="mdi mdi-menu-right"></i>Đăng ký</a></li>
+                                    <li><a href="{{ route('frontend.cart.index') }}"><i class="mdi mdi-menu-right"></i>Giỏ hàng</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -124,7 +124,7 @@
                     <p>&copy; Nam shop 2020. Thuộc bản quyền Nam shop.</p>
                 </div>
                 <div class="col-xs-12 col-sm-6 text-right">
-                    <a href="#"><img src="img/footer/payment.png" alt="" /></a>
+                    <img src="/frontend/img/footer/payment.png" alt="" />
                 </div>
             </div>
         </div>

@@ -109,7 +109,8 @@
                                 <option>Chọn trạng thái</option>
                                 <option value="1">Đang nhập</option>
                                 <option value="2">Mở bán</option>
-                                <option value="3">Hết hàng</option>
+                                <option value="3">Cũ</option>
+                                <option value="4">Hết hàng</option>
                             </select>
                             @error('status')
                                 <small class="form-text text-danger">{{ $message }}</small>

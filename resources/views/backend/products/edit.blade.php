@@ -111,7 +111,8 @@
                                 <option>Chọn trạng thái</option>
                                 <option {{ $product->status == 1  ? 'selected':'' }} value="1">Đang nhập</option>
                                 <option {{ $product->status == 2  ? 'selected':'' }} value="2">Mở bán</option>
-                                <option {{ $product->status == 3  ? 'selected':'' }} value="3">Hết hàng</option>
+                                <option {{ $product->status == 3  ? 'selected':'' }} value="3">Cũ</option>
+                                <option {{ $product->status == 4  ? 'selected':'' }} value="4">Hết hàng</option>
                             </select>
                             @error('status')
                                 <small class="form-text text-danger">{{ $message }}</small>

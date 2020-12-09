@@ -19,18 +19,42 @@ class HomeController extends Controller
     {
         // $images = Image::take(2)->get();
         $categories = Category::get();
-        $products = Product::take(4)->orderBy('id','desc')->get();
-        $products2 = Product::skip(4)->take(4)->orderBy('id','desc')->get();
+
+        //Xem chi tiết
+        $details = Product::get();
+
+        //Điện thoại mới
+        $products = Product::where('status',2)->take(4)->orderBy('updated_at','desc')->get();
+        $products2 = Product::where('status',2)->skip(4)->take(4)->orderBy('updated_at','desc')->get();
+
+        //Hai điện thoại ngẫu nhiên
         $productsrandom = Product::inRandomOrder()->limit(2)->get();
+
+        //Sắp bán
+        $comingsoon = Product::where('status',1)->take(4)->orderBy('updated_at','desc')->get();
+        $comingsoon2 = Product::where('status',1)->skip(4)->take(4)->orderBy('updated_at','desc')->get();
+        $comingsoon3 = Product::where('status',1)->skip(8)->take(4)->orderBy('updated_at','desc')->get();
+
+        //Điện thoại cũ
+        $old = Product::where('status',3)->take(4)->orderBy('updated_at','desc')->get();
+        $old2 = Product::where('status',3)->skip(4)->take(4)->orderBy('updated_at','desc')->get();
+        $old3 = Product::where('status',3)->skip(8)->take(4)->orderBy('updated_at','desc')->get();
         // dd($productsrandom);
 
 
         return view('frontend.home')->with([
             // 'images' => $images,
             'categories' => $categories,
+            'details' => $details,
             'products' => $products,
             'products2' => $products2,
             'productsrandom' => $productsrandom,
+            'comingsoon' => $comingsoon,
+            'comingsoon2' => $comingsoon2,
+            'comingsoon3' => $comingsoon3,
+            'old' => $old,
+            'old2' => $old2,
+            'old3' => $old3,
         ]);
     }
 

@@ -10,7 +10,7 @@
                 <div class="header-middel">
                     <div class="middel-top clearfix">
                         <div class="left floatleft">
-                            <p><i class="mdi mdi-phone"></i> Liên hệ : 0123456789</p>
+                            <p><i class="mdi mdi-phone"></i> Liên hệ : 0987654321</p>
                         </div>
                         <div class="center floatleft">
                             <form action="#" method="get">
