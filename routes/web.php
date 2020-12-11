@@ -85,7 +85,14 @@ Route::prefix('/')->group(function () {
     Route::prefix('product')->group(function () {
         Route::get('/',[\App\Http\Controllers\Frontend\ProductController::class, 'index'])->name('frontend.product.index');
         Route::get('/{product}',[\App\Http\Controllers\Frontend\ProductController::class, 'detail'])->name('frontend.product.detail');
-        Route::get('/remove/{id}',[\App\Http\Controllers\Frontend\ProductController::class, 'remove'])->name('frontend.product.remove');
-
+    });
+    //Danh mục sản phẩm
+    Route::prefix('category/')->group(function () {
+        Route::get('/{category}',[\App\Http\Controllers\Frontend\CategoryController::class, 'index'])->name('frontend.category.index');
+        //Sản phẩm sắp ra và cũ
+        Route::prefix('phone')->group(function () {
+            Route::get('/new',[\App\Http\Controllers\Frontend\CategoryController::class, 'new'])->name('frontend.new.index');
+            Route::get('/old',[\App\Http\Controllers\Frontend\CategoryController::class, 'old'])->name('frontend.old.index');
+        });
     });
 });

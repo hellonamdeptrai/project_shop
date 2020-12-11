@@ -48,16 +48,16 @@
                             <ul>
                                 <li><a href="{{route('frontend.index')}}">Trang chủ</a>
                                 </li>
-                                <li><a href="shop.html">Điện thoại</a>
+                                <li><a href="{{route('frontend.product.index')}}">Điện thoại</a>
                                     <ul class="dropdown">
                                         @foreach ($categories as $category)
-                                        <li><a href="blog-style-1.html">{{ $category->name }}</a></li>
+                                        <li><a href="{{route('frontend.category.index',$category->id)}}">{{ $category->name }}</a></li>
                                         @endforeach
                                     </ul>
                                 </li>
-                                <li><a href="#">Sắp bán</a>
+                                <li><a href="{{route('frontend.new.index')}}">Sắp bán</a>
                                 </li>
-                                <li><a href="blog.html">Điện thoại cũ</a>
+                                <li><a href="{{route('frontend.old.index')}}">Điện thoại cũ</a>
                                 </li>
                                 <li><a href="about.html">Thông tin</a></li>
                                 <li><a href="contact.html">Liên hệ</a></li>
@@ -71,7 +71,7 @@
                                 <ul>
                                     <li><a href="{{route('frontend.index')}}">Trang chủ</a>
                                     </li>
-                                    <li><a href="shop.html">Điện thoại</a>
+                                    <li><a href="{{route('frontend.product.index')}}">Điện thoại</a>
                                         <ul class="dropdown">
                                             @foreach ($categories as $category)
                                             <li><a href="blog-style-1.html">{{ $category->name }}</a></li>

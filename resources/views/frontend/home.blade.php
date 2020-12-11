@@ -68,7 +68,7 @@
                                         <div class="pro-type">
                                             <span>-{{$product->discount_percent}}%</span>
                                         </div>
-                                        <a href="{{route('frontend.product.detail',$product->id)}}"><img src="/storage/images/avatars/{{$product->avatar}}" alt="Product Title" /></a>
+                                        <a href="{{route('frontend.product.detail',$product->id,$product->id)}}"><img src="/storage/images/avatars/{{$product->avatar}}" alt="Product Title" /></a>
                                         <div class="actions-btn">
                                             <a href="{{ route('frontend.cart.add',$product->id) }}"><i class="mdi mdi-cart"></i></a>
                                             <a href="#" data-toggle="modal" data-target="#quick-view{{$product->id}}"><i class="mdi mdi-eye"></i></a>
@@ -125,56 +125,37 @@
                 <div class="col-sm-4 col-md-2">
                     <div class="tab-menu nav nav-tabs padding">
                         <ul>
-                            <li class="active"><a href="#dress1" data-toggle="tab" data-target="#dress1, #text1"><img src="/frontend/img/coming/s1.jpg" alt="" /></a></li>
-                            <li><a href="#dress2" data-toggle="tab" data-target="#dress2,#text2"><img src="/frontend/img/coming/s2.jpg" alt="" /></a></li>
+                            <?php $hi= 1?>
+                            <?php $hi2= 1?>
+                            <?php $hi3= 1?>
+                            <?php $hi4= 1?>
+                            @foreach ($productsrandom as $product)
+                            <li class="<?=$hi == 1?'active':'';$hi++?>"><a href="#dress<?= $hi2++?>" data-toggle="tab" data-target="#dress<?= $hi3++?>, #text<?= $hi4++?>"><img src="/storage/images/avatars/{{$product->avatar}}" alt="" /></a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
                 <div class="col-sm-7 col-md-5">
                     <div class="text-center large-img tab-content">
-                        <div class="tab-pane fade in active" id="dress1">
-                            <img src="/frontend/img/coming/l1.jpg" alt="" />
+                        <?php $ha= 1?>
+                        <?php $ha2= 1?>
+                        @foreach ($productsrandom as $product)
+                        <div class="tab-pane fade in <?=$ha == 1?'active':'';$ha++?>" id="dress<?= $ha2++?>">
+                            <img src="/storage/images/avatars/{{$product->avatar}}" alt="" />
                         </div>
-                        <div class="tab-pane fade" id="dress2">
-                            <img src="/frontend/img/coming/l2.jpg" alt="" />
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-5">
                     <div class="padding">
                         <div class="tab-content" >
                             <?php $i= 1?>
+                            <?php $ii= 1?>
                             @foreach ($productsrandom as $product)
-                            <div class="single-coming tab-pane fade in active" id="text<?= $i++?>">
+                            <div class="single-coming tab-pane fade in <?=$ii == 1?'active':'';$ii++?>" id="text<?= $i++?>">
                                 <h4><a href="#">{{$product->name}}</a></h4>
-                                <span><strong>$569.00</strong>   <del>$669.00</del></span>
-                                <p class="come-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed does eiusmodes tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venim, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam.</p>
-                                <ul class="color-size">
-                                    <li><span>Size</span><strong>:</strong> <a href="#">SL</a><a href="#">ML</a><a href="#">Xl</a></li>
-                                    <li><span>color</span><strong>:</strong> <a href="#">Red</a><a href="#">Grean</a><a href="#">Blue</a></li>
-                                    <li><span>Brand</span><strong>:</strong>Crazy Fashion</li>
-                                    <li><span>category</span><strong>:</strong>Fashion   Men’s</li>
-                                </ul>
-                                <div class="count-text clearfix">
-                                    <ul id="countdown-1">
-                                        <li>
-                                            <p class="timeRefDays timedescription">days</p>
-                                            <span class="days timenumbers">00</span>
-                                        </li>
-                                        <li>
-                                            <p class="timeRefHours timedescription">hrs</p>
-                                            <span class="hours timenumbers">00</span>
-                                        </li>
-                                        <li>
-                                            <p class="timeRefMinutes timedescription">mins</p>
-                                            <span class="minutes timenumbers">00</span>
-                                        </li>
-                                        <li>
-                                            <p class="timeRefSeconds timedescription">secs</p>
-                                            <span class="seconds timenumbers">00</span>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <span><strong>{{number_format($product->sale_price,0)}}đ</strong>   <del>{{number_format($product->origin_price,0)}}đ</del></span>
+                                <p class="come-p">Điện thoại {{$product->name}} xịn. <a href="{{route('frontend.product.detail',$product->id)}}">Mua ngay</a> để nhận được những ưu đãi khủng nào.</p>
                             </div>
                             @endforeach
                         </div>
@@ -430,9 +411,9 @@
                                                         <div class="product-img tab-content">
                                                             <div class="simpleLens-container tab-pane active fade in" id="sin-1">
                                                                 <div class="pro-type">
-                                                                    <span>-{{$old->discount_percent}}%</span>
+                                                                    <span>-{{$detail->discount_percent}}%</span>
                                                                 </div>
-                                                                <a class="simpleLens-image" data-lens-image="/storage/images/avatars/{{$old->avatar}}" href="#"><img src="/storage/images/avatars/{{$old->avatar}}" alt="" class="simpleLens-big-image"></a>
+                                                                <a class="simpleLens-image" data-lens-image="/storage/images/avatars/{{$detail->avatar}}" href="#"><img src="/storage/images/avatars/{{$detail->avatar}}" alt="" class="simpleLens-big-image"></a>
                                                             </div>
                                                         </div>
                                                     </div>

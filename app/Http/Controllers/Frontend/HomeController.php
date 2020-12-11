@@ -122,13 +122,4 @@ class HomeController extends Controller
         //
     }
 
-    public function detailProduct($id)
-    {
-        $images = Product::find(81)->images;
-        // dd($images);
-
-        return view('frontend.home')->with([
-            'images' => $images,
-        ]);
-    }
 }
