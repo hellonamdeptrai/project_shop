@@ -95,4 +95,9 @@ Route::prefix('/')->group(function () {
             Route::get('/old',[\App\Http\Controllers\Frontend\CategoryController::class, 'old'])->name('frontend.old.index');
         });
     });
+    //Người dùng
+    Route::prefix('user')->group(function () {
+        Route::get('/{product}/edit',[\App\Http\Controllers\Frontend\UserController::class, 'edit'])->name('frontend.user.edit');
+        Route::put('/{id}', [\App\Http\Controllers\Backend\UserController::class,'update'])->name('frontend.user.update');
+    });
 });

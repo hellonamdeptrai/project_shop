@@ -22,13 +22,18 @@
                             <ul class="clearfix">
                                 <li><a href="#"><i class="mdi mdi-account"></i></a>
                                     <ul>
+                                        @if (!Auth::user())
                                         <li><a href="{{ route('login') }}">Đăng nhập</a></li>
                                         <li><a href="{{ route('register') }}">Đăng ký</a></li>
+                                        @else
+                                        <li><a href="{{ route('frontend.user.edit',Auth::user()->id) }}">{{ Auth::user()->name }}</a></li>
+                                        @endif
                                     </ul>
                                 </li>
                                 <li><a href="#"><i class="mdi mdi-settings"></i></a>
                                     <ul>
-                                        <li><a href="my-account.html">Tài khoản</a></li>
+                                        @if (Auth::user())
+                                        <li><a href="{{route('frontend.user.edit',Auth::user()->id)}}">Tài khoản</a></li>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -38,6 +43,7 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+                                    @endif
                                     </ul>
                                 </li>
                             </ul>
