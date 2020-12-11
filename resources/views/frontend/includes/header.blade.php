@@ -78,9 +78,9 @@
                                             @endforeach
                                         </ul>
                                     </li>
-                                    <li><a href="#">Sắp bán</a>
+                                    <li><a href="{{route('frontend.new.index')}}">Sắp bán</a>
                                     </li>
-                                    <li><a href="blog.html">Điện thoại cũ</a>
+                                    <li><a href="{{route('frontend.old.index')}}">Điện thoại cũ</a>
                                     </li>
                                     <li><a href="about.html">Thông tin</a></li>
                                     <li><a href="contact.html">Liên hệ</a></li>
@@ -92,36 +92,16 @@
             </div>
             <div class="col-sm-2">
                 <div class="cart-itmes">
-                    <a class="cart-itme-a" href="cart.html">
+                    <a class="cart-itme-a" href="{{ route('frontend.cart.index') }}">
                         <i class="mdi mdi-cart"></i>
-                        02 items :  <strong>$86.00</strong>
+                        {{Cart::count()}} mặt hàng :  <strong>{{Cart::total(0)}}đ</strong>
                     </a>
                     <div class="cartdrop">
-                        <div class="sin-itme clearfix">
-                            <i class="mdi mdi-close"></i>
-                            <a class="cart-img" href="cart.html"><img src="img/cart/1.png" alt="" /></a>
-                            <div class="menu-cart-text">
-                                <a href="#"><h5>men’s black t-shirt</h5></a>
-                                <span>Color :  Black</span>
-                                <span>Size :     SL</span>
-                                <strong>$122.00</strong>
-                            </div>
-                        </div>
-                        <div class="sin-itme clearfix">
-                            <i class="mdi mdi-close"></i>
-                            <a class="cart-img" href="cart.html"><img src="img/cart/2.png" alt="" /></a>
-                            <div class="menu-cart-text">
-                                <a href="#"><h5>men’s black t-shirt</h5></a>
-                                <span>Color :  Black</span>
-                                <span>Size :     SL</span>
-                                <strong>$132.00</strong>
-                            </div>
-                        </div>
                         <div class="total">
-                            <span>total <strong>= $306.00</strong></span>
+                            <span>Tổng <strong>= {{Cart::total(0)}}đ</strong></span>
                         </div>
-                    <a class="goto" href="{{ route('frontend.cart.index') }}">go to cart</a>
-                        <a class="out-menu" href="checkout.html">Check out</a>
+                    <a class="goto" href="{{ route('frontend.cart.index') }}">đi tới giỏ hảng</a>
+                        <a class="out-menu" href="checkout.html">Thanh toán</a>
                     </div>
                 </div>
             </div>

@@ -68,7 +68,7 @@
                                         <div class="pro-type">
                                             <span>-{{$product->discount_percent}}%</span>
                                         </div>
-                                        <a href="{{route('frontend.product.detail',$product->id,$product->id)}}"><img src="/storage/images/avatars/{{$product->avatar}}" alt="Product Title" /></a>
+                                        <a href="{{route('frontend.product.detail',$product->id)}}"><img src="/storage/images/avatars/{{$product->avatar}}" alt="Product Title" /></a>
                                         <div class="actions-btn">
                                             <a href="{{ route('frontend.cart.add',$product->id) }}"><i class="mdi mdi-cart"></i></a>
                                             <a href="#" data-toggle="modal" data-target="#quick-view{{$product->id}}"><i class="mdi mdi-eye"></i></a>
