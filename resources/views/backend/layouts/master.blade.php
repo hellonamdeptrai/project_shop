@@ -107,6 +107,16 @@
             $('#summernote').summernote();
         });
     </script>
+    <script>
+        $(document).ready(function() {
+            $('#summernote2').summernote();
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#summernote3').summernote();
+        });
+    </script>
 
 </body>
 

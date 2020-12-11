@@ -34,7 +34,7 @@ class StoreProductRequest extends FormRequest
             'category_id' => 'in:'.$string,
             'brand' => 'required',
             'images' => 'required||max:2048',
-            // 'images' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'avatar' => 'required',
             'origin_price' => 'required|numeric',
             'sale_price' => 'required|numeric',
             'content' => 'required',
@@ -67,6 +67,7 @@ class StoreProductRequest extends FormRequest
             'content' => 'Mô tả điện thoại',
             'status' => 'Trạng thái',
             'images' => 'Ảnh',
+            'avatar' => 'Avatar'
         ];
     }
 }

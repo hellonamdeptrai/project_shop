@@ -17,7 +17,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $images = Image::take(2)->get();
         $categories = Category::get();
 
         //Xem chi tiết
@@ -43,7 +42,6 @@ class HomeController extends Controller
 
 
         return view('frontend.home')->with([
-            // 'images' => $images,
             'categories' => $categories,
             'details' => $details,
             'products' => $products,
@@ -122,5 +120,15 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function detailProduct($id)
+    {
+        $images = Product::find(81)->images;
+        // dd($images);
+
+        return view('frontend.home')->with([
+            'images' => $images,
+        ]);
     }
 }

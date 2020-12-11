@@ -33,12 +33,10 @@ class UpdateProductRequest extends FormRequest
             'name' => 'required|min:2|max:100',
             'category_id' => 'in:'.$string,
             'brand' => 'required',
-            // 'images' => 'required||max:2048',
-            // 'images' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'origin_price' => 'required|numeric',
             'sale_price' => 'required|numeric',
             'content' => 'required',
-            'status' => 'in:1,2,3',
+            'status' => 'in:1,2,3,4',
         ];
     }
 

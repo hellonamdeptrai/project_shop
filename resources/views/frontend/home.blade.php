@@ -68,7 +68,7 @@
                                         <div class="pro-type">
                                             <span>-{{$product->discount_percent}}%</span>
                                         </div>
-                                        <a href="{{route('frontend.product.detail',$product->id)}}"><img src="/frontend/img/products/1.jpg" alt="Product Title" /></a>
+                                        <a href="{{route('frontend.product.detail',$product->id)}}"><img src="/storage/images/avatars/{{$product->avatar}}" alt="Product Title" /></a>
                                         <div class="actions-btn">
                                             <a href="{{ route('frontend.cart.add',$product->id) }}"><i class="mdi mdi-cart"></i></a>
                                             <a href="#" data-toggle="modal" data-target="#quick-view{{$product->id}}"><i class="mdi mdi-eye"></i></a>
@@ -95,7 +95,7 @@
                                         <div class="pro-type">
                                             <span>-{{$product->discount_percent}}%</span>
                                         </div>
-                                        <a href="#"><img src="/frontend/img/products/1.jpg" alt="Product Title" /></a>
+                                        <a href="{{route('frontend.product.detail',$product->id)}}"><img src="/storage/images/avatars/{{$product->avatar}}" alt="Product Title" /></a>
                                         <div class="actions-btn">
                                             <a href="{{ route('frontend.cart.add',$product->id) }}"><i class="mdi mdi-cart"></i></a>
                                             <a href="#" data-toggle="modal" data-target="#quick-view{{$product->id}}"><i class="mdi mdi-eye"></i></a>
@@ -210,18 +210,18 @@
                                         <div class="single-product">
                                             <div class="product-img">
                                                 <div class="pro-type">
-                                                    <span>new</span>
+                                                    <span>-{{$comingsoon->discount_percent}}%</span>
                                                 </div>
-                                                <a href="#"><img src="/frontend/img/products/5.jpg" alt="Product Title" /></a>
+                                                <a href="{{route('frontend.product.detail',$comingsoon->id)}}"><img src="/storage/images/avatars/{{$comingsoon->avatar}}" alt="Product Title" /></a>
                                                 <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
+                                                    <a href="{{ route('frontend.cart.add',$comingsoon->id) }}"><i class="mdi mdi-cart"></i></a>
                                                     <a href="#" data-toggle="modal" data-target="#quick-view{{$comingsoon->id}}"><i class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
                                             <div class="product-dsc">
                                                 <p><a href="#">{{$comingsoon->name}}</a></p>
-                                                <span>$165.20</span>
+                                                <span>{{number_format($comingsoon->sale_price,0)}}đ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -236,18 +236,18 @@
                                         <div class="single-product">
                                             <div class="product-img">
                                                 <div class="pro-type">
-                                                    <span>new</span>
+                                                    <span>-{{$comingsoon->discount_percent}}%</span>
                                                 </div>
-                                                <a href="#"><img src="/frontend/img/products/5.jpg" alt="Product Title" /></a>
+                                                <a href="{{route('frontend.product.detail',$comingsoon->id)}}"><img src="/storage/images/avatars/{{$comingsoon->avatar}}" alt="Product Title" /></a>
                                                 <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
+                                                    <a href="{{ route('frontend.cart.add',$comingsoon->id) }}"><i class="mdi mdi-cart"></i></a>
                                                     <a href="#" data-toggle="modal" data-target="#quick-view{{$comingsoon->id}}"><i class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
                                             <div class="product-dsc">
                                                 <p><a href="#">{{$comingsoon->name}}</a></p>
-                                                <span>$165.20</span>
+                                                <span>{{number_format($comingsoon->sale_price,0)}}đ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -262,18 +262,18 @@
                                         <div class="single-product">
                                             <div class="product-img">
                                                 <div class="pro-type">
-                                                    <span>new</span>
+                                                    <span>-{{$comingsoon->discount_percent}}%</span>
                                                 </div>
-                                                <a href="#"><img src="/frontend/img/products/5.jpg" alt="Product Title" /></a>
+                                                <a href="{{route('frontend.product.detail',$comingsoon->id)}}"><img src="/storage/images/avatars/{{$comingsoon->avatar}}" alt="Product Title" /></a>
                                                 <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
+                                                    <a href="{{ route('frontend.cart.add',$comingsoon->id) }}"><i class="mdi mdi-cart"></i></a>
                                                     <a href="#" data-toggle="modal" data-target="#quick-view{{$comingsoon->id}}"><i class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
                                             <div class="product-dsc">
                                                 <p><a href="#">{{$comingsoon->name}}</a></p>
-                                                <span>$165.20</span>
+                                                <span>{{number_format($comingsoon->sale_price,0)}}đ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -296,18 +296,18 @@
                                         <div class="single-product">
                                             <div class="product-img">
                                                 <div class="pro-type">
-                                                    <span>new</span>
+                                                    <span>-{{$old->discount_percent}}%</span>
                                                 </div>
-                                                <a href="#"><img src="/frontend/img/products/5.jpg" alt="Product Title" /></a>
+                                                <a href="{{route('frontend.product.detail',$old->id)}}"><img src="/storage/images/avatars/{{$old->avatar}}" alt="Product Title" /></a>
                                                 <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
+                                                    <a href="{{ route('frontend.cart.add',$old->id) }}"><i class="mdi mdi-cart"></i></a>
                                                     <a href="#" data-toggle="modal" data-target="#quick-view{{$old->id}}"><i class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
                                             <div class="product-dsc">
                                                 <p><a href="#">{{$old->name}}</a></p>
-                                                <span>$165.20</span>
+                                                <span>{{number_format($old->sale_price,0)}}đ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -322,18 +322,18 @@
                                         <div class="single-product">
                                             <div class="product-img">
                                                 <div class="pro-type">
-                                                    <span>new</span>
+                                                    <span>-{{$old->discount_percent}}%</span>
                                                 </div>
-                                                <a href="#"><img src="/frontend/img/products/5.jpg" alt="Product Title" /></a>
+                                                <a href="{{route('frontend.product.detail',$old->id)}}"><img src="/storage/images/avatars/{{$old->avatar}}" alt="Product Title" /></a>
                                                 <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
+                                                    <a href="{{ route('frontend.cart.add',$old->id) }}"><i class="mdi mdi-cart"></i></a>
                                                     <a href="#" data-toggle="modal" data-target="#quick-view{{$old->id}}"><i class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
                                             <div class="product-dsc">
                                                 <p><a href="#">{{$old->name}}</a></p>
-                                                <span>$165.20</span>
+                                                <span>{{number_format($old->sale_price,0)}}đ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -348,18 +348,18 @@
                                         <div class="single-product">
                                             <div class="product-img">
                                                 <div class="pro-type">
-                                                    <span>new</span>
+                                                    <span>-{{$old->discount_percent}}%</span>
                                                 </div>
-                                                <a href="#"><img src="/frontend/img/products/5.jpg" alt="Product Title" /></a>
+                                                <a href="{{route('frontend.product.detail',$old->id)}}"><img src="/storage/images/avatars/{{$old->avatar}}" alt="Product Title" /></a>
                                                 <div class="actions-btn">
-                                                    <a href="#"><i class="mdi mdi-cart"></i></a>
+                                                    <a href="{{ route('frontend.cart.add',$old->id) }}"><i class="mdi mdi-cart"></i></a>
                                                     <a href="#" data-toggle="modal" data-target="#quick-view{{$old->id}}"><i class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
                                             <div class="product-dsc">
                                                 <p><a href="#">{{$old->name}}</a></p>
-                                                <span>$165.20</span>
+                                                <span>{{number_format($old->sale_price,0)}}đ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -410,7 +410,7 @@
     </section>
     <!-- service section end -->
     @foreach ($details as $detail)
-    <!-- quick view start -->        
+    <!-- quick view start -->
     <div class="product-details quick-view modal animated zoomInUp" id="quick-view{{$detail->id}}">
         <div class="container">
             <div class="row">
@@ -428,41 +428,16 @@
                                                 <div class="single-quick-image text-center">
                                                     <div class="list-img">
                                                         <div class="product-img tab-content">
-                                                            <div class="simpleLens-container tab-pane fade in" id="sin-1">
+                                                            <div class="simpleLens-container tab-pane active fade in" id="sin-1">
                                                                 <div class="pro-type">
-                                                                    <span>new</span>
+                                                                    <span>-{{$old->discount_percent}}%</span>
                                                                 </div>
-                                                                <a class="simpleLens-image" data-lens-image="/frontend/img/products/z1.jpg" href="#"><img src="/frontend/img/products/z1.jpg" alt="" class="simpleLens-big-image"></a>
-                                                            </div>
-                                                            <div class="simpleLens-container tab-pane active fade in" id="sin-2">
-                                                                <div class="pro-type sell">
-                                                                    <span>sell</span>
-                                                                </div>
-                                                                <a class="simpleLens-image" data-lens-image="/frontend/img/products/z2.jpg" href="#"><img src="/frontend/img/products/z2.jpg" alt="" class="simpleLens-big-image"></a>
-                                                            </div>
-                                                            <div class="simpleLens-container tab-pane fade in" id="sin-3">
-                                                                <div class="pro-type">
-                                                                    <span>-15%</span>
-                                                                </div>
-                                                                <a class="simpleLens-image" data-lens-image="/frontend/img/products/z3.jpg" href="#"><img src="/frontend/img/products/z3.jpg" alt="" class="simpleLens-big-image"></a>
-                                                            </div>
-                                                            <div class="simpleLens-container tab-pane fade in" id="sin-4">
-                                                                <div class="pro-type">
-                                                                    <span>new</span>
-                                                                </div>
-                                                                <a class="simpleLens-image" data-lens-image="/frontend/img/products/z4.jpg" href="#"><img src="/frontend/img/products/z4.jpg" alt="" class="simpleLens-big-image"></a>
+                                                                <a class="simpleLens-image" data-lens-image="/storage/images/avatars/{{$old->avatar}}" href="#"><img src="/storage/images/avatars/{{$old->avatar}}" alt="" class="simpleLens-big-image"></a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="quick-thumb">
-                                                    <ul class="product-slider">
-                                                        <li><a data-toggle="tab" href="#sin-1"> <img src="/frontend/img/products/s1.jpg" alt="quick view" /> </a></li>
-                                                        <li class="active"><a data-toggle="tab" href="#sin-2"> <img src="/frontend/img/products/s2.jpg" alt="small image" /> </a></li>
-                                                        <li><a data-toggle="tab" href="#sin-3"> <img src="/frontend/img/products/s3.jpg" alt="small image" /> </a></li>
-                                                        <li><a data-toggle="tab" href="#sin-4"> <img src="/frontend/img/products/s4.jpg" alt="small image" /> </a></li>
-                                                    </ul>
-                                                </div>
+
                                             </div>
                                         </div>
                                         <div class="col-xs-12 col-sm-7 col-md-8">
@@ -478,60 +453,10 @@
                                                         <i class="mdi mdi-star-outline"></i>
                                                     </div>
                                                     <h5><del>{{number_format($detail->origin_price,0)}}đ</del> {{number_format($detail->sale_price,0)}}đ</h5>
-                                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have be suffered alteration in some form, by injected humour, or randomised words which donot look even slightly believable. If you are going to use a passage of Lorem Ipsum, you neede be sure there isn't anything embarrassing hidden in the middle of text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                                    <div class="all-choose">
-                                                        <div class="s-shoose">
-                                                            <h5>Color</h5>
-                                                            <div class="color-select clearfix">
-                                                                <span></span>
-                                                                <span class="outline"></span>
-                                                                <span></span>
-                                                                <span></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="s-shoose">
-                                                            <h5>size</h5>
-                                                            <div class="size-drop">
-                                                                <div class="btn-group">
-                                                                    <button type="button" class="btn">XL</button>
-                                                                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                        <span class=""><i class="mdi mdi-chevron-down"></i></span>
-                                                                    </button>
-                                                                    <ul class="dropdown-menu">
-                                                                        <li><a href="#">Xl</a></li>
-                                                                        <li><a href="#">SL</a></li>
-                                                                        <li><a href="#">S</a></li>
-                                                                        <li><a href="#">L</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="s-shoose">
-                                                            <h5>qty</h5>
-                                                            <form action="#" method="POST">
-                                                                <div class="plus-minus">
-                                                                    <a class="dec qtybutton">-</a>
-                                                                    <input type="text" value="02" name="qtybutton" class="plus-minus-box">
-                                                                    <a class="inc qtybutton">+</a>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
+                                                    <div>{!!$detail->promotion!!}</div>
                                                     <div class="list-btn">
-                                                        <a href="#">add to cart</a>
-                                                        <a href="#">wishlist</a>
-                                                        <a href="#">zoom</a>
-                                                    </div>
-                                                    <div class="share-tag clearfix">
-                                                        <ul class="blog-share floatleft">
-                                                            <li><h5>share </h5></li>
-                                                            <li><a href="#"><i class="mdi mdi-facebook"></i></a></li>
-                                                            <li><a href="#"><i class="mdi mdi-twitter"></i></a></li>
-                                                            <li><a href="#"><i class="mdi mdi-linkedin"></i></a></li>
-                                                            <li><a href="#"><i class="mdi mdi-vimeo"></i></a></li>
-                                                            <li><a href="#"><i class="mdi mdi-dribbble"></i></a></li>
-                                                            <li><a href="#"><i class="mdi mdi-instagram"></i></a></li>
-                                                        </ul>
+                                                        <a href="{{ route('frontend.cart.add',$product->id) }}">Thêm vào giỏ hàng</a>
+                                                        <a href="{{route('frontend.product.detail',$product->id)}}">Xem chi tiết</a>
                                                     </div>
                                                 </div>
                                             </div>

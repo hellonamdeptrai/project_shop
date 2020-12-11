@@ -21,6 +21,9 @@ class CreateProductsTable extends Migration
             $table->integer('origin_price');
             $table->integer('sale_price');
             $table->decimal('discount_percent', 2, 0);
+            $table->string('avatar');
+            $table->text('promotion');
+            $table->text('specifications');
             $table->text('content');
             $table->integer('user_id');
             $table->integer('category_id');

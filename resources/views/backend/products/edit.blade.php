@@ -82,6 +82,17 @@
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3">
+                            <label for="file-input" class=" form-control-label">Chọn avatar</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <input type="file" id="file-input" name="avatar" class="form-control-file">
+                            @error('avatar')
+                                <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3">
                             <label for="file-multiple-input" class=" form-control-label">Hình ảnh điện thoại</label>
                         </div>
                         <div class="col-12 col-md-9">
@@ -93,10 +104,32 @@
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3">
+                            <label for="textarea-input" class=" form-control-label">Thông tin khuyến mại</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <textarea id="summernote" name="promotion">{{ $product->promotion }}</textarea>
+                            @error('promotion')
+                                <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label for="textarea-input" class=" form-control-label">Thông số kỹ thuật</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <textarea id="summernote2" name="specifications">{{ $product->specifications }}</textarea>
+                            @error('specifications')
+                                <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3">
                             <label for="textarea-input" class=" form-control-label">Mô tả điện thoại</label>
                         </div>
                         <div class="col-12 col-md-9">
-                            <textarea id="summernote" name="content">{{ $product->content }}</textarea>
+                            <textarea id="summernote3" name="content">{{ $product->content }}</textarea>
                             @error('content')
                                 <small class="form-text text-danger">{{ $message }}</small>
                             @enderror

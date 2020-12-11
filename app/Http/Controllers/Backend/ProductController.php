@@ -57,10 +57,19 @@ class ProductController extends Controller
         $product->brand = $request->get('brand');
         $product->origin_price = $origin = $request->get('origin_price');
         $product->sale_price = $sale = $request->get('sale_price');
+        $product->promotion = $request->get('promotion');
+        $product->specifications = $request->get('specifications');
         $product->content = $request->get('content');
         $product->status = $request->get('status');
         $product->user_id = Auth::user()->id;
         $product->discount_percent = (($origin - $sale)/$sale)*100  ;
+
+        $file = $request->file('avatar');
+        if($file){
+            $path = Storage::disk('public')->putFileAs('images/avatars', $file,$file->getClientOriginalName());
+            $product->avatar = $file->getClientOriginalName();
+        }
+
         $product->save();
 
 
@@ -121,10 +130,20 @@ class ProductController extends Controller
         $product->brand = $request->get('brand');
         $product->origin_price = $origin = $request->get('origin_price');
         $product->sale_price = $sale = $request->get('sale_price');
+        $product->promotion = $request->get('promotion');
+        $product->specifications = $request->get('specifications');
         $product->content = $request->get('content');
         $product->status = $request->get('status');
         $product->user_id = Auth::user()->id;
         $product->discount_percent = (($origin - $sale)/$sale)*100;
+
+        $file = $request->file('avatar');
+        if($file){
+            $path = Storage::disk('public')->putFileAs('images/avatars', $file,$file->getClientOriginalName());
+            $product->avatar = $file->getClientOriginalName();
+        }
+        $product->avatar = $product->avatar;
+
         $product->save();
 
         $files = $request->file('images');
