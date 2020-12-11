@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('brand');
             $table->integer('origin_price');
             $table->integer('sale_price');
-            $table->double('discount_percent', 0, 0);
+            $table->decimal('discount_percent', 2, 0);
             $table->text('content');
             $table->integer('user_id');
             $table->integer('category_id');
