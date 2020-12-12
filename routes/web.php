@@ -68,6 +68,7 @@ Route::prefix('dashboard')->middleware(['auth','auth.admin'])->group(function ()
     // Quản lý đặt hàng
     Route::prefix('orders')->group(function(){
         Route::get('/', [\App\Http\Controllers\Backend\OrderController::class,'index'])->name('backend.order.index');
+        Route::get('/{id}', [\App\Http\Controllers\Backend\OrderController::class,'edit'])->name('backend.order.order');
     });
 });
 

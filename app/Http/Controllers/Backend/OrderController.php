@@ -15,7 +15,11 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::paginate(10);
+
+        return view('backend.orders.index')->with([
+            'orders' => $orders
+        ]);
     }
 
     /**
@@ -25,7 +29,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -36,7 +40,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $shop = Order::find(1);
         $shop->products()->attach([
             1,
@@ -64,7 +68,11 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        //
+        // $products = Order::paginate(10);
+
+        // return view('backend.orders.order')->with([
+        //     'products' => $products
+        // ]);
     }
 
     /**

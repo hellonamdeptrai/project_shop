@@ -53,13 +53,13 @@ class CartController extends Controller
 
     public function store(Request $request)
     {
-
         $order = new Order();
 
         $order->user_id = Auth::user()->id;
         $order->money = Cart::total(0,0,'');
 
         $order->save();
+
         Cart::destroy();
 
         return redirect()->route('frontend.index');

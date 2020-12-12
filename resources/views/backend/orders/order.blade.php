@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="overview-wrap">
-            <h2 class="title-1">Danh sách đơn hang</h2>
+            <h2 class="title-1">Danh sách sản phẩm trong đơn hàng</h2>
         </div>
     </div>
     <div class="col-md-12 d-flex flex-row-reverse">
@@ -46,7 +46,7 @@
                 </tr>
             </thead>
             <tbody>
-            @foreach($orders as $order)
+            @foreach($products as $order)
             <tr class="tr-shadow">
                 <td>{{ $order->id }}</td>
                 <td>{{ $order->money }}</td>
@@ -63,9 +63,6 @@
                         <a href="#" class="item" data-toggle="tooltip" data-placement="top" title="Xem">
                             <i class="fa fa-eye"></i>
                         </a>
-                        <a href="{{ route('backend.order.order', $order->id) }}" class="item" data-toggle="tooltip" data-placement="top" title="Hoàn thành">
-                            <i class="zmdi zmdi-edit"></i>
-                        </a>
                     </div>
                 </td>
             </tr>
@@ -75,5 +72,5 @@
         </table>
     </div>
 
-    {!! $orders->links() !!}
+    {!! $products->links() !!}
 @endsection

@@ -34,10 +34,7 @@
                             <a href="{{ route('backend.categories.index') }}">Danh mục</a>
                         </li>
                         <li>
-                            <a href="index4.html">Đặt hàng</a>
-                        </li>
-                        <li>
-                            <a href="index4.html">Doanh thu</a>
+                            <a href="{{ route('backend.order.index') }}">Đơn hàng</a>
                         </li>
                     </ul>
                 </li>
