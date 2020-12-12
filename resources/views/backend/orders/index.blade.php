@@ -63,9 +63,11 @@
                         <a href="#" class="item" data-toggle="tooltip" data-placement="top" title="Xem">
                             <i class="fa fa-eye"></i>
                         </a>
+                        @if($order->status == 1)
                         <a href="{{ route('backend.order.order', $order->id) }}" class="item" data-toggle="tooltip" data-placement="top" title="Hoàn thành">
                             <i class="zmdi zmdi-edit"></i>
                         </a>
+                        @endif
                     </div>
                 </td>
             </tr>

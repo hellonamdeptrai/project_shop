@@ -68,11 +68,13 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        // $products = Order::paginate(10);
+        $user = Order::find($id);
 
-        // return view('backend.orders.order')->with([
-        //     'products' => $products
-        // ]);
+        $user->status = 2;
+
+        $user->save();
+
+        return redirect()->route('backend.order.index');
     }
 
     /**

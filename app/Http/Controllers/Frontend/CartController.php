@@ -56,6 +56,7 @@ class CartController extends Controller
         $order = new Order();
 
         $order->user_id = Auth::user()->id;
+        $order->status = 1;
         $order->money = Cart::total(0,0,'');
 
         $order->save();
