@@ -15,7 +15,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $products = Product::take(10)->get();
+        $products = Product::orderBy('updated_at','desc')->take(10)->get();
         return view('backend.dashboard')->with([
             'products' => $products
         ]);
