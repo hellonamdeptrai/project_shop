@@ -107,7 +107,7 @@
                             <span>Tổng <strong>= {{Cart::total(0)}}đ</strong></span>
                         </div>
                     <a class="goto" href="{{ route('frontend.cart.index') }}">đi tới giỏ hảng</a>
-                        <a class="out-menu" href="checkout.html">Thanh toán</a>
+                        <a class="out-menu" href="{{route('frontend.order.create')}}">Thanh toán</a>
                     </div>
                 </div>
             </div>

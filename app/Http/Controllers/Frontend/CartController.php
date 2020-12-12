@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -39,6 +41,28 @@ class CartController extends Controller
     {
         Cart::remove($id);
         return redirect()->route('frontend.cart.index');
+    }
+
+    public function create()
+    {
+        $categories = Category::get();
+        return view('frontend.cart.create')->with([
+            'categories' => $categories
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+
+        $order = new Order();
+
+        $order->user_id = Auth::user()->id;
+        $order->money = Cart::total(0,0,'');
+
+        $order->save();
+        Cart::destroy();
+
+        return redirect()->route('frontend.index');
     }
 
 }

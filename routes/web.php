@@ -100,4 +100,9 @@ Route::prefix('/')->group(function () {
         Route::get('/{product}/edit',[\App\Http\Controllers\Frontend\UserController::class, 'edit'])->name('frontend.user.edit');
         Route::put('/{id}', [\App\Http\Controllers\Backend\UserController::class,'update'])->name('frontend.user.update');
     });
+    //Order
+    Route::prefix('order')->group(function () {
+        Route::get('/checkout', [\App\Http\Controllers\Frontend\CartController::class,'create'])->name('frontend.order.create');
+        Route::post('/', [\App\Http\Controllers\Frontend\CartController::class,'store'])->name('frontend.order.store');
+    });
 });

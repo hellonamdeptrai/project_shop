@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -35,7 +36,13 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $shop = Order::find(1);
+        $shop->products()->attach([
+            1,
+            2,
+            3
+        ]);
     }
 
     /**

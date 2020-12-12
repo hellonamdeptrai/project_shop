@@ -75,7 +75,7 @@
 							</div>
 							<div class="cart-form-text custom-input">
 								<div class="submit-text coupon">
-                                    <a href="">Làm thủ tục</a>
+                                    <a href="{{route('frontend.order.create')}}">Làm thủ tục</a>
 								</div>
 							</div>
 						</div>
